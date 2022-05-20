@@ -160,5 +160,11 @@ namespace Programa_STPMJ
             Application.Exit();
         }
 
+        private void btnPaginaInicial_Click(object sender, EventArgs e)
+        {
+            panelFormCentral.Controls.Clear();
+            panelFormCentral.Controls.Add(webView21);
+            EsconderSubmenu();
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Programa_STPMJ
     {
         private static string getConnectionString()
         {
-            string conString = "Server=108.167.132.199;Database=soluc963_STPMJ;Uid=soluc963_STPMJ;Pwd=R~X4ro$%K18b; ";
+            string conString = "Server=108.167.132.199;Database=soluc963_ANAYAVIAGENS;Uid=soluc963_ANAYA; Pwd=6w!41LE5}z@3; ";
             return conString;
         }
 

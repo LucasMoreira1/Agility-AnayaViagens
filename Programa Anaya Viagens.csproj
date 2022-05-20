@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1D36DAA2-D8F5-4A54-A48B-1EBC90B5C946}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Programa_STPMJ</RootNamespace>
-    <AssemblyName>Programa STPMJ</AssemblyName>
+    <RootNamespace>ANAYA_VIAGENS</RootNamespace>
+    <AssemblyName>Programa_ANAYA_VIAGENS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -15,7 +15,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\Lucas\OneDrive\Área de Trabalho\Programa\Versão final\</PublishUrl>
+    <PublishUrl>C:\Users\Lucas\OneDrive\Área de Trabalho\Programa\ANAYA VIAGENS\Versão Final\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,8 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -240,6 +239,10 @@
     <Content Include="Agility_logo.ico" />
     <Content Include="icone.ico" />
     <Content Include="icone2_sem_fundo.ico" />
+    <None Include="Logo\icone.jpeg" />
+    <None Include="Logo\logo_fundo_azul.jpeg" />
+    <None Include="Logo\logo_png.png" />
+    <None Include="Logo\logo_site.jpeg" />
     <Content Include="logo_2_sem_fundo.ico" />
     <None Include="Socio_sem_foto.jpeg" />
   </ItemGroup>

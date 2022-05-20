@@ -25,19 +25,13 @@ namespace Programa_STPMJ
 
         private void ResetMe()
         {
-            txtMatricula.Text = "";
+            
             txtNome.Text = "";
             txtRG.Text = "";
             txtCPF.Text = "";
             txtDataNascimento.Text = "";
             cboxEstadoCivil.SelectedIndex = 0;
-            txtNacionalidade.Text = "";
-            cboxEmpresa.Text = "";
-            txtFuncao.Text = "";
-            txtAdmissao.Text = "";
-            txtLocalTrabalho.Text = "";
             txtTelefone.Text = "";
-            txtRecado.Text = "";
             txtEmail.Text = "";
             txtCEP.Text = "";
             txtLogradouro.Text = "";
@@ -46,10 +40,14 @@ namespace Programa_STPMJ
             txtBairro.Text = "";
             txtCidade.Text = "";
             txtEstado.Text = "";
-            txtLimite.Text = "";
-            txtDisponivel.Text = "";
             txtObservacao.Text = "";
             imgCamera.Image = null;
+
+            txtNomeDependente.Text = "";
+            txtDataNascimentoDependente.Text = "";
+            cboxGrauParentesco.Text = "";
+            txtRGDependente.Text = "";
+            txtCPFDependente.Text = "";
         }
 
         private void Executar(string mySQL, string param)
@@ -63,11 +61,6 @@ namespace Programa_STPMJ
         {
             CRUD.cmd.Parameters.Clear();
 
-            //byte[] img = null;
-
-            //FileStream Stream = new FileStream(localizacaoFoto, FileMode.Open, FileAccess.Read);
-            //BinaryReader brs = new BinaryReader(Stream);
-            //img = brs.ReadBytes((int)Stream.Length);
 
             MemoryStream ms = new MemoryStream();
             if (imgCamera.Image == null)
@@ -82,23 +75,14 @@ namespace Programa_STPMJ
             
             byte[] img = ms.GetBuffer();
 
-            
-
-
-            CRUD.cmd.Parameters.AddWithValue("matricula", txtMatricula.Text.Trim());
+           
             CRUD.cmd.Parameters.AddWithValue("nome", txtNome.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("rg", txtRG.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cpf", txtCPF.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("data_nascimento", txtDataNascimento.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("estado_civil", cboxEstadoCivil.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("nacionalidade", txtNacionalidade.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("data_cadastro", txtDataCadastro.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("empresa", cboxEmpresa.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("funcao", txtFuncao.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("admissao", txtAdmissao.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("local_trabalho", txtLocalTrabalho.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("telefone", txtTelefone.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("recado", txtRecado.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("email", txtEmail.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cep", txtCEP.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("logradouro", txtLogradouro.Text.Trim());
@@ -107,11 +91,15 @@ namespace Programa_STPMJ
             CRUD.cmd.Parameters.AddWithValue("bairro", txtBairro.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cidade", txtCidade.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("estado", txtEstado.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("limite", txtLimite.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("disponivel", txtDisponivel.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("foto", img);
-            CRUD.cmd.Parameters.AddWithValue("registro_sindical", txtRegistro.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("Cad_numero", txtCadNumero.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("nomeDependente", txtNomeDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("DataNascimentoDependente", txtDataNascimentoDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("GrauParentesco", cboxGrauParentesco.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("RGDependente", txtRGDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("CPFDependente", txtCPFDependente.Text.Trim());
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -121,23 +109,20 @@ namespace Programa_STPMJ
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMatricula.Text.Trim()) ||
-                    string.IsNullOrEmpty(txtNome.Text.Trim()))
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
             {
-                MessageBox.Show("Por favor insira a Matrícula e Nome completo", "Dados Obrigatórios",
+                MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             
 
-            CRUD.sql = "INSERT INTO SOCIOS(matricula,nome,rg,cpf,datanascimento,estadocivil," +
-                "nacionalidade,datacadastro,empresa,funcao,admissao,localtrabalho," +
-                "telefone,recados,email,cep,logradouro,numero,complemento,bairro,cidade,estado," +
-                "limite,disponivel,observacao,foto)" +
-                "Values(@matricula,@nome,@rg,@cpf,@data_nascimento,@estado_civil,@nacionalidade," +
-                "@data_cadastro,@empresa,@funcao,@admissao,@local_trabalho," +
-                "@telefone,@recado,@email,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
-                "@limite,@disponivel,@observacao,@foto);";
+            CRUD.sql = "INSERT INTO CLIENTES(nome,rg,cpf,datanascimento,estadocivil," +
+                "telefone,email,cep,logradouro,numero,complemento,bairro,cidade,estado," +
+                "observacao,foto,datacadastro)" +
+                "Values(@nome,@rg,@cpf,@data_nascimento,@estado_civil," +
+                "@telefone,@email,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
+                "@observacao,@foto,@data_cadastro);";
 
 
             Executar(CRUD.sql, "Insert");
@@ -176,24 +161,21 @@ namespace Programa_STPMJ
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            
 
-            if (string.IsNullOrEmpty(txtMatricula.Text.Trim()) || 
-                    string.IsNullOrEmpty(txtNome.Text.Trim()))
+
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
             {
-                MessageBox.Show("Por favor insira a Matrícula e Nome completo", "Dados Obrigatórios",
+                MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            CRUD.sql = "UPDATE SOCIOS SET matricula = @matricula, nome = @nome, rg = @rg, cpf = @cpf, " +
+            CRUD.sql = "UPDATE CLIENTES SET nome = @nome, rg = @rg, cpf = @cpf, " +
                 "datanascimento = @data_nascimento, estadocivil = @estado_civil," +
-                "nacionalidade = @nacionalidade, datacadastro = @data_cadastro, empresa = @empresa, " +
-                "funcao = @funcao, admissao = @admissao, localtrabalho = @local_trabalho, " +
-                "telefone = @telefone, recados = @recado, email = @email, cep = @cep, " +
+                "telefone = @telefone, email = @email, cep = @cep, " +
                 "logradouro = @logradouro, numero = @numero, complemento = @complemento, bairro = @bairro," +
-                "cidade = @cidade, estado = @estado, limite = @limite, disponivel = @disponivel, " +
-                "observacao = @observacao, foto = @foto WHERE registrosindical = @registro_sindical";
+                "cidade = @cidade, estado = @estado, " +
+                "observacao = @observacao, datacadastro = @data_cadastro, foto = @foto WHERE CadNumero = @cad_numero";
 
 
             Executar(CRUD.sql, "Update");
@@ -203,9 +185,6 @@ namespace Programa_STPMJ
 
             ResetMe();
             this.Close();
-
-            //FormPesquisa formPesquisa = new FormPesquisa();
-            //formPesquisa.loadFiltro();
             
         }
 
@@ -294,7 +273,7 @@ namespace Programa_STPMJ
         {
 
 
-            CRUD.sql = "UPDATE SOCIOS SET foto = @foto";
+            CRUD.sql = "UPDATE CLIENTES SET foto = @foto";
 
 
             Executar(CRUD.sql, "Update");
@@ -307,6 +286,54 @@ namespace Programa_STPMJ
 
             ResetMe();
             this.Close();
+        }
+
+        private void btnAdcDependente_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            {
+                MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
+            CRUD.sql = "INSERT INTO DEPENDENTES(CadReferencia,Nome,GrauParentesco,DataNascimento,RG,CPF)" +
+                "Values(@Cad_numero, @nomeDependente, @GrauParentesco, @DataNascimentoDependente, @RGDependente, @CPFDependente);";
+
+
+            Executar(CRUD.sql, "Insert");
+
+            MessageBox.Show("Dependente registrado.", "Cadastro Dependente",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //loadData("");
+            ResetDependente();
+        }
+
+        private void ResetDependente()
+        {
+            txtNomeDependente.Text = "";
+            txtDataNascimentoDependente.Text = "";
+            cboxGrauParentesco.Text = "";
+            txtRGDependente.Text = "";
+            txtCPFDependente.Text = "";
+        }
+
+        private void btnListaDependente_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            {
+                MessageBox.Show("Nenhum cliente selecionado", "Dados Obrigatórios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            FormDependentes formDependentes = new FormDependentes();
+            formDependentes.txtCadReferencia.Text = txtCadNumero.Text;
+            formDependentes.txtNomeReferencia.Text = txtNome.Text;
+            formDependentes.Show();
+
         }
     }
 }

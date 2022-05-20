@@ -30,8 +30,8 @@ namespace Programa_STPMJ
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new FontAwesome.Sharp.IconButton();
             this.btnMostrarTodos = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -109,7 +109,7 @@ namespace Programa_STPMJ
             this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Reply;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(57)))), ((int)(((byte)(88)))));
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 35;
             this.iconButton3.Location = new System.Drawing.Point(12, 0);
@@ -124,19 +124,14 @@ namespace Programa_STPMJ
             this.cboxFiltro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxFiltro2.FormattingEnabled = true;
             this.cboxFiltro2.Items.AddRange(new object[] {
-            "RegistroSindical",
-            "Matricula",
+            "CadNumero",
             "Nome",
             "RG",
             "CPF",
             "DataNascimento",
             "EstadoCivil",
-            "Naturalidade",
             "DataCadastro",
             "Empresa",
-            "Funcao",
-            "Admissao",
-            "LocalTrabalho",
             "CEP",
             "Logradouro",
             "Numero",
@@ -144,15 +139,12 @@ namespace Programa_STPMJ
             "Bairro",
             "Cidade",
             "Estado",
-            "Telefone",
-            "Recados",
-            "Limite",
-            "Disponivel"});
+            "Telefone"});
             this.cboxFiltro2.Location = new System.Drawing.Point(139, 85);
             this.cboxFiltro2.Name = "cboxFiltro2";
             this.cboxFiltro2.Size = new System.Drawing.Size(121, 28);
             this.cboxFiltro2.TabIndex = 3;
-            this.cboxFiltro2.Text = "Matricula";
+            this.cboxFiltro2.Text = "Nome";
             // 
             // txtFiltro2
             // 
@@ -179,19 +171,14 @@ namespace Programa_STPMJ
             this.cboxFiltro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxFiltro3.FormattingEnabled = true;
             this.cboxFiltro3.Items.AddRange(new object[] {
-            "Matricula",
+            "CadNumero",
             "Nome",
             "RG",
             "CPF",
             "DataNascimento",
             "EstadoCivil",
-            "Naturalidade",
-            "RegistroSindical",
             "DataCadastro",
             "Empresa",
-            "Funcao",
-            "Admissao",
-            "LocalTrabalho",
             "CEP",
             "Logradouro",
             "Numero",
@@ -199,15 +186,12 @@ namespace Programa_STPMJ
             "Bairro",
             "Cidade",
             "Estado",
-            "Telefone",
-            "Recados",
-            "Limite",
-            "Disponivel"});
+            "Telefone"});
             this.cboxFiltro3.Location = new System.Drawing.Point(266, 85);
             this.cboxFiltro3.Name = "cboxFiltro3";
             this.cboxFiltro3.Size = new System.Drawing.Size(121, 28);
             this.cboxFiltro3.TabIndex = 3;
-            this.cboxFiltro3.Text = "Matricula";
+            this.cboxFiltro3.Text = "Telefone";
             // 
             // txtFiltro3
             // 
@@ -237,23 +221,23 @@ namespace Programa_STPMJ
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(12, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -354,7 +338,7 @@ namespace Programa_STPMJ
             this.txtFiltroMatricula.Name = "txtFiltroMatricula";
             this.txtFiltroMatricula.Size = new System.Drawing.Size(121, 26);
             this.txtFiltroMatricula.TabIndex = 11;
-            this.txtFiltroMatricula.Text = "Matricula";
+            this.txtFiltroMatricula.Text = "CadNumero";
             // 
             // lblFiltro1
             // 

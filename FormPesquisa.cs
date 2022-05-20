@@ -12,7 +12,6 @@ namespace Programa_STPMJ
     {
         private int row = 0;
         private string id = "";
-        MySqlDataReader reader;
         public FormPesquisa()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace Programa_STPMJ
 
         public void loadFiltro()
         {
-            CRUD.sql = "SELECT * FROM SOCIOS WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
+            CRUD.sql = "SELECT * FROM CLIENTES WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
               "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%';";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
@@ -59,17 +58,15 @@ namespace Programa_STPMJ
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.DataSource = dt;
             dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void loadData(string keyword)
         {
-            //CRUD.sql = "SELECT * FROM SOCIOS WHERE nome LIKE @keyword1 OR matricula = @keyword2;";
-            // string strKeyword = string.Format("%{0}%", keyword);
-            CRUD.sql = "SELECT * FROM SOCIOS;";
+
+            CRUD.sql = "SELECT * FROM CLIENTES;";
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
-            //CRUD.cmd.Parameters.Clear();
-            //CRUD.cmd.Parameters.AddWithValue("keyword1", strKeyword);
-            //CRUD.cmd.Parameters.AddWithValue("keyword2", keyword);
+
 
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
             
@@ -91,6 +88,7 @@ namespace Programa_STPMJ
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.DataSource = dt;
             dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
         }
 
@@ -99,45 +97,30 @@ namespace Programa_STPMJ
             DataGridView dgv = dataGridView1;
             FormCadastro formcadastro = new FormCadastro();
 
-            //reader = CRUD.cmd.ExecuteReader();
-            //if (reader.Read())
-            //{
-            //    byte[] img = (byte[])(reader["foto"]);
-            //    MemoryStream ms = new MemoryStream(img);
-            //    formcadastro.imgCamera.Image = Image.FromStream(ms);
-            //}
 
             formcadastro.btnSalvar.Visible = false;
             formcadastro.btnAtualizar.Visible = true;
             formcadastro.Show();
-            formcadastro.txtMatricula.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-            formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
-            formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
-            formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
-            formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
-            formcadastro.cboxEmpresa.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
-            formcadastro.txtFuncao.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formcadastro.txtAdmissao.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.txtLocalTrabalho.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            formcadastro.txtRecado.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-            formcadastro.txtLimite.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
-            formcadastro.txtDisponivel.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
-            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[25].Value);
+            
+            formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[15].Value);
             formcadastro.imgCamera.Image = Image.FromStream(ms);
-            formcadastro.txtRegistro.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
 
         }
 
@@ -147,7 +130,7 @@ namespace Programa_STPMJ
             {
                 DataGridView dgv = dataGridView1;
                 this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
                 btnAtualizar.Text = "Atualizar (" + this.id + ")";
                 btnDeletar.Text = "Deletar (" + this.id + ")";
 
@@ -161,33 +144,26 @@ namespace Programa_STPMJ
             formcadastro.btnSalvar.Visible = false;
             formcadastro.btnAtualizar.Visible = true;
             formcadastro.Show();
-            formcadastro.txtMatricula.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-            formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
-            formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
-            formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
-            formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
-            formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
-            formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
-            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
-            formcadastro.cboxEmpresa.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
-            formcadastro.txtFuncao.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
-            formcadastro.txtAdmissao.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.txtLocalTrabalho.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            formcadastro.txtRecado.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-            formcadastro.txtLimite.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
-            formcadastro.txtDisponivel.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
 
-            formcadastro.txtRegistro.Text = Convert.ToString(dgv.CurrentRow.Cells[26].Value);
+            formcadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            formcadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            formcadastro.txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            formcadastro.txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            formcadastro.cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            formcadastro.txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[15].Value);
+            formcadastro.imgCamera.Image = Image.FromStream(ms);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
 
         }
 
@@ -210,7 +186,7 @@ namespace Programa_STPMJ
             if(MessageBox.Show("Tem certeza que deseja deletar os dados selecionados?","Deletar Dados",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                CRUD.sql = "DELETE FROM SOCIOS WHERE RegistroSindical = " + registroSelecionado + "";
+                CRUD.sql = "DELETE FROM CLIENTES WHERE CadNumero = " + registroSelecionado + "";
                 CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
                 CRUD.PerformCRUD(CRUD.cmd);
 

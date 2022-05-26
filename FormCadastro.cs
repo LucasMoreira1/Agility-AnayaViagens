@@ -335,5 +335,20 @@ namespace Programa_STPMJ
             formDependentes.Show();
 
         }
+
+        private void cboxDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxDocumento.Text == "CPF")
+            {
+                txtCPF1.Visible = true;
+                txtRG1.Visible = false;
+            }
+            else if (cboxDocumento.Text == "RG")
+            {
+                txtCPF1.Visible = false;
+                txtRG1.Visible = true;
+            }
+
+        }
     }
 }

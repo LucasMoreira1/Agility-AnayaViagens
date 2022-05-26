@@ -31,6 +31,7 @@ namespace Programa_STPMJ
             txtCPF.Text = "";
             txtDataNascimento.Text = "";
             cboxEstadoCivil.SelectedIndex = 0;
+            cboxDocumento.SelectedIndex = 0;
             txtTelefone.Text = "";
             txtEmail.Text = "";
             txtCEP.Text = "";
@@ -340,15 +341,67 @@ namespace Programa_STPMJ
         {
             if (cboxDocumento.Text == "CPF")
             {
-                txtCPF1.Visible = true;
-                txtRG1.Visible = false;
+                txtCPF.Visible = true;
+                txtRG.Visible = false;
+                txtPassaporte.Visible = false;
+                txtOrgEmissor.Visible = false;
             }
             else if (cboxDocumento.Text == "RG")
             {
-                txtCPF1.Visible = false;
-                txtRG1.Visible = true;
+                txtCPF.Visible = false;
+                txtRG.Visible = true;
+                txtPassaporte.Visible = false;
+                txtOrgEmissor.Visible = true;
+            }
+            else if (cboxDocumento.Text == "PASSAPORTE")
+            {
+                txtCPF.Visible = false;
+                txtRG.Visible = false;
+                txtPassaporte.Visible = true;
+                txtOrgEmissor.Visible = false;
             }
 
+        }
+
+        private void txtDataNascimento_Click(object sender, EventArgs e)
+        {
+            IniciarEsquerda();
+        }
+
+        private void IniciarEsquerda()
+        {
+            txtDataNascimento.SelectionStart = 0;
+            txtRG.SelectionStart = 0;
+            txtCPF.SelectionStart = 0;
+            txtPassaporte.SelectionStart = 0;
+            txtRGDependente.SelectionStart = 0;
+            txtCPFDependente.SelectionStart = 0;
+            txtDataNascimentoDependente.SelectionStart = 0;
+            txtOrgEmissor.SelectionStart = 0;
+            txtTelefone.SelectionStart = 0;
+            txtDataCasamento.SelectionStart = 0;
+            txtCEP.SelectionStart = 0;
+
+        }
+
+        private void cboxEmbarque_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxEmbarque.SelectedIndex == 1)
+            {
+                lblEmbarqueOnde.Visible = true;
+                txtEmbarqueOnde.Visible = true;
+            }
+            else if (cboxEmbarque.SelectedIndex == 0)
+            {
+                lblEmbarqueOnde.Visible = false;
+                txtEmbarqueOnde.Visible = false;
+            }
+        }
+
+        private void txtCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnBuscarCEP_Click(sender, e);
         }
     }
 }

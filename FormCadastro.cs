@@ -32,6 +32,7 @@ namespace Programa_STPMJ
             txtDataNascimento.Text = "";
             cboxEstadoCivil.SelectedIndex = 0;
             cboxDocumento.SelectedIndex = 0;
+            cboxDocumentoDependente.SelectedIndex = 0;
             txtTelefone.Text = "";
             txtEmail.Text = "";
             txtCEP.Text = "";
@@ -128,7 +129,7 @@ namespace Programa_STPMJ
 
             Executar(CRUD.sql, "Insert");
 
-            MessageBox.Show("Sócio registrado.", "Cadastro",
+            MessageBox.Show("Cliente registrado.", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //loadData("");
@@ -323,9 +324,9 @@ namespace Programa_STPMJ
 
         private void btnListaDependente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            if (string.IsNullOrEmpty(txtCadNumero.Text.Trim()))
             {
-                MessageBox.Show("Nenhum cliente selecionado", "Dados Obrigatórios",
+                MessageBox.Show("Por favor salve o cadastro", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
@@ -382,6 +383,14 @@ namespace Programa_STPMJ
             txtDataCasamento.SelectionStart = 0;
             txtCEP.SelectionStart = 0;
 
+            txtCertidaoNascimentoDependente.SelectionStart = 0;
+            txtCPFDependente.SelectionStart = 0;
+            txtDataNascimentoDependente.SelectionStart = 0;
+            txtOrgEmissorDependente.SelectionStart = 0;
+            txtRGDependente.SelectionStart = 0;
+            txtPassaporteDependente.SelectionStart = 0;
+
+
         }
 
         private void cboxEmbarque_SelectedIndexChanged(object sender, EventArgs e)
@@ -402,6 +411,42 @@ namespace Programa_STPMJ
         {
             if (e.KeyCode == Keys.Enter)
                 btnBuscarCEP_Click(sender, e);
+        }
+
+        private void cboxDocumentoDependente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxDocumentoDependente.Text == "CPF")
+            {
+                txtCPFDependente.Visible = true;
+                txtRGDependente.Visible = false;
+                txtPassaporteDependente.Visible = false;
+                txtOrgEmissorDependente.Visible = false;
+                txtCertidaoNascimentoDependente.Visible = false;
+            }
+            else if (cboxDocumentoDependente.Text == "RG")
+            {
+                txtCPFDependente.Visible = false;
+                txtRGDependente.Visible = true;
+                txtPassaporteDependente.Visible = false;
+                txtOrgEmissorDependente.Visible = true;
+                txtCertidaoNascimentoDependente.Visible = false;
+            }
+            else if (cboxDocumentoDependente.Text == "PASSAPORTE")
+            {
+                txtCPFDependente.Visible = false;
+                txtRGDependente.Visible = false;
+                txtPassaporteDependente.Visible = true;
+                txtOrgEmissorDependente.Visible = false;
+                txtCertidaoNascimentoDependente.Visible = false;
+            }
+            else if(cboxDocumentoDependente.Text== "CERT. NASC.")
+            {
+                txtCPFDependente.Visible = false;
+                txtRGDependente.Visible = false;
+                txtPassaporteDependente.Visible = false;
+                txtOrgEmissorDependente.Visible = false;
+                txtCertidaoNascimentoDependente.Visible = true;
+            }
         }
     }
 }

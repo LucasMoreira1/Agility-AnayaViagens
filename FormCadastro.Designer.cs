@@ -43,11 +43,16 @@
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.cboxCamera = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboxEmbarque = new System.Windows.Forms.ComboBox();
             this.cboxEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblEmbarqueOnde = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +62,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.txtEmbarqueOnde = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -82,24 +88,23 @@
             this.btnLimpar = new FontAwesome.Sharp.IconButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cboxDocumentoDependente = new System.Windows.Forms.ComboBox();
             this.cboxGrauParentesco = new System.Windows.Forms.ComboBox();
             this.txtDataNascimentoDependente = new System.Windows.Forms.MaskedTextBox();
             this.btnListaDependente = new System.Windows.Forms.Button();
             this.btnAdcDependente = new System.Windows.Forms.Button();
             this.txtNomeDependente = new System.Windows.Forms.TextBox();
+            this.txtOrgEmissorDependente = new System.Windows.Forms.MaskedTextBox();
+            this.txtPassaporteDependente = new System.Windows.Forms.MaskedTextBox();
             this.txtRGDependente = new System.Windows.Forms.MaskedTextBox();
             this.txtCPFDependente = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboxEmbarque = new System.Windows.Forms.ComboBox();
-            this.lblEmbarqueOnde = new System.Windows.Forms.Label();
-            this.txtEmbarqueOnde = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -147,7 +152,7 @@
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1103, 443);
+            this.groupBox1.Size = new System.Drawing.Size(999, 443);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Identificação";
@@ -170,9 +175,8 @@
             // 
             // btnEncerrarCamera
             // 
-            this.btnEncerrarCamera.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEncerrarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncerrarCamera.Location = new System.Drawing.Point(892, 355);
+            this.btnEncerrarCamera.Location = new System.Drawing.Point(832, 355);
             this.btnEncerrarCamera.Name = "btnEncerrarCamera";
             this.btnEncerrarCamera.Size = new System.Drawing.Size(91, 33);
             this.btnEncerrarCamera.TabIndex = 18;
@@ -182,12 +186,11 @@
             // 
             // btnImportarFoto
             // 
-            this.btnImportarFoto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnImportarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportarFoto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImportarFoto.IconColor = System.Drawing.Color.Black;
             this.btnImportarFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImportarFoto.Location = new System.Drawing.Point(892, 394);
+            this.btnImportarFoto.Location = new System.Drawing.Point(832, 394);
             this.btnImportarFoto.Name = "btnImportarFoto";
             this.btnImportarFoto.Size = new System.Drawing.Size(91, 30);
             this.btnImportarFoto.TabIndex = 13;
@@ -197,12 +200,11 @@
             // 
             // btnTirarFoto
             // 
-            this.btnTirarFoto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTirarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTirarFoto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnTirarFoto.IconColor = System.Drawing.Color.Black;
             this.btnTirarFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTirarFoto.Location = new System.Drawing.Point(692, 394);
+            this.btnTirarFoto.Location = new System.Drawing.Point(632, 394);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(91, 30);
             this.btnTirarFoto.TabIndex = 13;
@@ -212,12 +214,11 @@
             // 
             // btnIniciarCamera
             // 
-            this.btnIniciarCamera.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnIniciarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarCamera.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnIniciarCamera.IconColor = System.Drawing.Color.Black;
             this.btnIniciarCamera.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIniciarCamera.Location = new System.Drawing.Point(692, 355);
+            this.btnIniciarCamera.Location = new System.Drawing.Point(632, 355);
             this.btnIniciarCamera.Name = "btnIniciarCamera";
             this.btnIniciarCamera.Size = new System.Drawing.Size(91, 33);
             this.btnIniciarCamera.TabIndex = 13;
@@ -227,11 +228,12 @@
             // 
             // imgCamera
             // 
-            this.imgCamera.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgCamera.BackgroundImage = global::ANAYA_VIAGENS.Properties.Resources.Socio_sem_foto;
             this.imgCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgCamera.Image = global::ANAYA_VIAGENS.Properties.Resources.Socio_sem_foto;
             this.imgCamera.Location = new System.Drawing.Point(571, 19);
             this.imgCamera.Name = "imgCamera";
-            this.imgCamera.Size = new System.Drawing.Size(526, 305);
+            this.imgCamera.Size = new System.Drawing.Size(412, 305);
             this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgCamera.TabIndex = 17;
             this.imgCamera.TabStop = false;
@@ -261,7 +263,7 @@
             // txtRG
             // 
             this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRG.Location = new System.Drawing.Point(305, 92);
+            this.txtRG.Location = new System.Drawing.Point(305, 160);
             this.txtRG.Mask = "00,000,000-0";
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(123, 26);
@@ -313,14 +315,45 @@
             // 
             // cboxCamera
             // 
-            this.cboxCamera.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboxCamera.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboxCamera.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboxCamera.FormattingEnabled = true;
-            this.cboxCamera.Location = new System.Drawing.Point(692, 330);
+            this.cboxCamera.Location = new System.Drawing.Point(632, 330);
             this.cboxCamera.Name = "cboxCamera";
             this.cboxCamera.Size = new System.Drawing.Size(291, 21);
             this.cboxCamera.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1-SIM",
+            "2-NÃO"});
+            this.comboBox1.Location = new System.Drawing.Point(145, 355);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(150, 28);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
+            // 
+            // cboxEmbarque
+            // 
+            this.cboxEmbarque.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboxEmbarque.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxEmbarque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxEmbarque.FormattingEnabled = true;
+            this.cboxEmbarque.Items.AddRange(new object[] {
+            "1-RODOVIARIA",
+            "9-OUTRO"});
+            this.cboxEmbarque.Location = new System.Drawing.Point(145, 321);
+            this.cboxEmbarque.Name = "cboxEmbarque";
+            this.cboxEmbarque.Size = new System.Drawing.Size(150, 28);
+            this.cboxEmbarque.TabIndex = 7;
+            this.cboxEmbarque.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
             // 
             // cboxEstadoCivil
             // 
@@ -377,6 +410,37 @@
             this.label6.Size = new System.Drawing.Size(91, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Estado Civil";
+            // 
+            // lblEmbarqueOnde
+            // 
+            this.lblEmbarqueOnde.AutoSize = true;
+            this.lblEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmbarqueOnde.Location = new System.Drawing.Point(301, 328);
+            this.lblEmbarqueOnde.Name = "lblEmbarqueOnde";
+            this.lblEmbarqueOnde.Size = new System.Drawing.Size(57, 20);
+            this.lblEmbarqueOnde.TabIndex = 1;
+            this.lblEmbarqueOnde.Text = "Onde?";
+            this.lblEmbarqueOnde.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(8, 361);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Possui Pet?";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 328);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Embarque";
             // 
             // label9
             // 
@@ -466,6 +530,15 @@
             this.label21.TabIndex = 1;
             this.label21.Text = "Telefone";
             // 
+            // txtEmbarqueOnde
+            // 
+            this.txtEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmbarqueOnde.Location = new System.Drawing.Point(364, 325);
+            this.txtEmbarqueOnde.Name = "txtEmbarqueOnde";
+            this.txtEmbarqueOnde.Size = new System.Drawing.Size(200, 26);
+            this.txtEmbarqueOnde.TabIndex = 17;
+            this.txtEmbarqueOnde.Visible = false;
+            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -500,9 +573,9 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 611);
+            this.groupBox2.Location = new System.Drawing.Point(12, 678);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1103, 177);
+            this.groupBox2.Size = new System.Drawing.Size(999, 177);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -536,7 +609,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(531, 54);
+            this.label17.Location = new System.Drawing.Point(617, 54);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(108, 20);
             this.label17.TabIndex = 1;
@@ -556,7 +629,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(341, 86);
+            this.label19.Location = new System.Drawing.Point(439, 86);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(59, 20);
             this.label19.TabIndex = 1;
@@ -576,7 +649,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(341, 54);
+            this.label16.Location = new System.Drawing.Point(439, 54);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 20);
             this.label16.TabIndex = 1;
@@ -605,7 +678,7 @@
             // txtComplemento
             // 
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplemento.Location = new System.Drawing.Point(669, 51);
+            this.txtComplemento.Location = new System.Drawing.Point(755, 51);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(114, 26);
             this.txtComplemento.TabIndex = 22;
@@ -621,7 +694,7 @@
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(436, 83);
+            this.txtCidade.Location = new System.Drawing.Point(522, 83);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(347, 26);
             this.txtCidade.TabIndex = 24;
@@ -631,13 +704,13 @@
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.Location = new System.Drawing.Point(102, 83);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(233, 26);
+            this.txtBairro.Size = new System.Drawing.Size(331, 26);
             this.txtBairro.TabIndex = 23;
             // 
             // txtNumero
             // 
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(436, 51);
+            this.txtNumero.Location = new System.Drawing.Point(522, 51);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(89, 26);
             this.txtNumero.TabIndex = 21;
@@ -647,7 +720,7 @@
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(102, 51);
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(233, 26);
+            this.txtLogradouro.Size = new System.Drawing.Size(331, 26);
             this.txtLogradouro.TabIndex = 20;
             // 
             // btnSalvar
@@ -657,7 +730,7 @@
             this.btnSalvar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSalvar.IconColor = System.Drawing.Color.Black;
             this.btnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalvar.Location = new System.Drawing.Point(930, 74);
+            this.btnSalvar.Location = new System.Drawing.Point(825, 74);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(81, 35);
             this.btnSalvar.TabIndex = 29;
@@ -672,7 +745,7 @@
             this.btnAtualizar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnAtualizar.IconColor = System.Drawing.Color.Black;
             this.btnAtualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAtualizar.Location = new System.Drawing.Point(930, 74);
+            this.btnAtualizar.Location = new System.Drawing.Point(825, 74);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(81, 35);
             this.btnAtualizar.TabIndex = 29;
@@ -688,7 +761,7 @@
             this.btnImagemEmBranco.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImagemEmBranco.IconColor = System.Drawing.Color.Black;
             this.btnImagemEmBranco.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImagemEmBranco.Location = new System.Drawing.Point(930, 33);
+            this.btnImagemEmBranco.Location = new System.Drawing.Point(825, 33);
             this.btnImagemEmBranco.Name = "btnImagemEmBranco";
             this.btnImagemEmBranco.Size = new System.Drawing.Size(81, 35);
             this.btnImagemEmBranco.TabIndex = 29;
@@ -714,7 +787,7 @@
             this.btnLimpar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnLimpar.IconColor = System.Drawing.Color.Black;
             this.btnLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpar.Location = new System.Drawing.Point(1017, 74);
+            this.btnLimpar.Location = new System.Drawing.Point(912, 74);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(81, 35);
             this.btnLimpar.TabIndex = 30;
@@ -729,33 +802,55 @@
             this.groupBox4.Controls.Add(this.btnImagemEmBranco);
             this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
-            this.groupBox4.Location = new System.Drawing.Point(12, 794);
+            this.groupBox4.Location = new System.Drawing.Point(12, 861);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1103, 115);
+            this.groupBox4.Size = new System.Drawing.Size(999, 115);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Observação";
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtCertidaoNascimentoDependente);
+            this.groupBox5.Controls.Add(this.cboxDocumentoDependente);
             this.groupBox5.Controls.Add(this.cboxGrauParentesco);
             this.groupBox5.Controls.Add(this.txtDataNascimentoDependente);
             this.groupBox5.Controls.Add(this.btnListaDependente);
             this.groupBox5.Controls.Add(this.btnAdcDependente);
             this.groupBox5.Controls.Add(this.txtNomeDependente);
+            this.groupBox5.Controls.Add(this.txtOrgEmissorDependente);
+            this.groupBox5.Controls.Add(this.txtPassaporteDependente);
             this.groupBox5.Controls.Add(this.txtRGDependente);
             this.groupBox5.Controls.Add(this.txtCPFDependente);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Location = new System.Drawing.Point(12, 461);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1103, 144);
+            this.groupBox5.Size = new System.Drawing.Size(999, 211);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dependentes";
+            // 
+            // cboxDocumentoDependente
+            // 
+            this.cboxDocumentoDependente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxDocumentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxDocumentoDependente.FormattingEnabled = true;
+            this.cboxDocumentoDependente.Items.AddRange(new object[] {
+            "CPF",
+            "PASSAPORTE",
+            "RG",
+            "CERT. NASC."});
+            this.cboxDocumentoDependente.Location = new System.Drawing.Point(145, 59);
+            this.cboxDocumentoDependente.Name = "cboxDocumentoDependente";
+            this.cboxDocumentoDependente.Size = new System.Drawing.Size(150, 28);
+            this.cboxDocumentoDependente.TabIndex = 19;
+            this.cboxDocumentoDependente.SelectedIndexChanged += new System.EventHandler(this.cboxDocumentoDependente_SelectedIndexChanged);
+            this.cboxDocumentoDependente.TextUpdate += new System.EventHandler(this.cboxDocumento_SelectedIndexChanged);
             // 
             // cboxGrauParentesco
             // 
@@ -770,18 +865,18 @@
             "5-NETO/NETA",
             "6-IRMÃO/IRMÃ",
             "9-OUTRO"});
-            this.cboxGrauParentesco.Location = new System.Drawing.Point(145, 61);
+            this.cboxGrauParentesco.Location = new System.Drawing.Point(145, 95);
             this.cboxGrauParentesco.Name = "cboxGrauParentesco";
-            this.cboxGrauParentesco.Size = new System.Drawing.Size(247, 28);
+            this.cboxGrauParentesco.Size = new System.Drawing.Size(288, 28);
             this.cboxGrauParentesco.TabIndex = 5;
             // 
             // txtDataNascimentoDependente
             // 
             this.txtDataNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNascimentoDependente.Location = new System.Drawing.Point(146, 97);
+            this.txtDataNascimentoDependente.Location = new System.Drawing.Point(146, 131);
             this.txtDataNascimentoDependente.Mask = "00/00/0000";
             this.txtDataNascimentoDependente.Name = "txtDataNascimentoDependente";
-            this.txtDataNascimentoDependente.Size = new System.Drawing.Size(246, 26);
+            this.txtDataNascimentoDependente.Size = new System.Drawing.Size(287, 26);
             this.txtDataNascimentoDependente.TabIndex = 4;
             this.txtDataNascimentoDependente.ValidatingType = typeof(System.DateTime);
             this.txtDataNascimentoDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
@@ -813,26 +908,50 @@
             this.txtNomeDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeDependente.Location = new System.Drawing.Point(146, 25);
             this.txtNomeDependente.Name = "txtNomeDependente";
-            this.txtNomeDependente.Size = new System.Drawing.Size(419, 26);
+            this.txtNomeDependente.Size = new System.Drawing.Size(499, 26);
             this.txtNomeDependente.TabIndex = 2;
+            // 
+            // txtOrgEmissorDependente
+            // 
+            this.txtOrgEmissorDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrgEmissorDependente.Location = new System.Drawing.Point(522, 61);
+            this.txtOrgEmissorDependente.Mask = ">???/??";
+            this.txtOrgEmissorDependente.Name = "txtOrgEmissorDependente";
+            this.txtOrgEmissorDependente.Size = new System.Drawing.Size(123, 26);
+            this.txtOrgEmissorDependente.TabIndex = 4;
+            this.txtOrgEmissorDependente.Visible = false;
+            this.txtOrgEmissorDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            // 
+            // txtPassaporteDependente
+            // 
+            this.txtPassaporteDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassaporteDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtPassaporteDependente.Mask = ">??######";
+            this.txtPassaporteDependente.Name = "txtPassaporteDependente";
+            this.txtPassaporteDependente.Size = new System.Drawing.Size(123, 26);
+            this.txtPassaporteDependente.TabIndex = 4;
+            this.txtPassaporteDependente.Visible = false;
+            this.txtPassaporteDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // txtRGDependente
             // 
             this.txtRGDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRGDependente.Location = new System.Drawing.Point(443, 61);
+            this.txtRGDependente.Location = new System.Drawing.Point(310, 61);
             this.txtRGDependente.Mask = "00,000,000-0";
             this.txtRGDependente.Name = "txtRGDependente";
-            this.txtRGDependente.Size = new System.Drawing.Size(122, 26);
+            this.txtRGDependente.Size = new System.Drawing.Size(123, 26);
             this.txtRGDependente.TabIndex = 4;
+            this.txtRGDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // txtCPFDependente
             // 
             this.txtCPFDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPFDependente.Location = new System.Drawing.Point(443, 97);
+            this.txtCPFDependente.Location = new System.Drawing.Point(310, 61);
             this.txtCPFDependente.Mask = "000,000,000-00";
             this.txtCPFDependente.Name = "txtCPFDependente";
-            this.txtCPFDependente.Size = new System.Drawing.Size(121, 26);
+            this.txtCPFDependente.Size = new System.Drawing.Size(123, 26);
             this.txtCPFDependente.TabIndex = 5;
+            this.txtCPFDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // label25
             // 
@@ -848,7 +967,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(7, 64);
+            this.label27.Location = new System.Drawing.Point(7, 98);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(129, 20);
             this.label27.TabIndex = 1;
@@ -858,110 +977,63 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(8, 100);
+            this.label28.Location = new System.Drawing.Point(8, 134);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(132, 20);
             this.label28.TabIndex = 1;
             this.label28.Text = "Data Nascimento";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1-SIM",
+            "2-NÃO"});
+            this.comboBox2.Location = new System.Drawing.Point(145, 163);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(150, 28);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Documento";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 64);
+            this.label1.Location = new System.Drawing.Point(8, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
+            this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "RG";
+            this.label1.Text = "Tem Autorização?";
             // 
-            // label7
+            // txtCertidaoNascimentoDependente
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(399, 100);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "CPF";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 328);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Embarque";
-            // 
-            // cboxEmbarque
-            // 
-            this.cboxEmbarque.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboxEmbarque.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxEmbarque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxEmbarque.FormattingEnabled = true;
-            this.cboxEmbarque.Items.AddRange(new object[] {
-            "1-RODOVIARIA",
-            "9-OUTRO"});
-            this.cboxEmbarque.Location = new System.Drawing.Point(145, 321);
-            this.cboxEmbarque.Name = "cboxEmbarque";
-            this.cboxEmbarque.Size = new System.Drawing.Size(150, 28);
-            this.cboxEmbarque.TabIndex = 7;
-            this.cboxEmbarque.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
-            // 
-            // lblEmbarqueOnde
-            // 
-            this.lblEmbarqueOnde.AutoSize = true;
-            this.lblEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmbarqueOnde.Location = new System.Drawing.Point(301, 328);
-            this.lblEmbarqueOnde.Name = "lblEmbarqueOnde";
-            this.lblEmbarqueOnde.Size = new System.Drawing.Size(57, 20);
-            this.lblEmbarqueOnde.TabIndex = 1;
-            this.lblEmbarqueOnde.Text = "Onde?";
-            this.lblEmbarqueOnde.Visible = false;
-            // 
-            // txtEmbarqueOnde
-            // 
-            this.txtEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmbarqueOnde.Location = new System.Drawing.Point(364, 325);
-            this.txtEmbarqueOnde.Name = "txtEmbarqueOnde";
-            this.txtEmbarqueOnde.Size = new System.Drawing.Size(200, 26);
-            this.txtEmbarqueOnde.TabIndex = 17;
-            this.txtEmbarqueOnde.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 361);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Possui Pet?";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1-SIM",
-            "2-NÃO"});
-            this.comboBox1.Location = new System.Drawing.Point(145, 355);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 28);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
+            this.txtCertidaoNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCertidaoNascimentoDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
+            this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 26);
+            this.txtCertidaoNascimentoDependente.TabIndex = 20;
             // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1127, 938);
+            this.ClientSize = new System.Drawing.Size(1027, 987);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -1042,8 +1114,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataNascimentoDependente;
         public System.Windows.Forms.MaskedTextBox txtRGDependente;
         public System.Windows.Forms.MaskedTextBox txtCPFDependente;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboxDocumento;
         public System.Windows.Forms.MaskedTextBox txtRG;
         public System.Windows.Forms.MaskedTextBox txtCPF;
@@ -1060,5 +1130,12 @@
         public System.Windows.Forms.TextBox txtEmbarqueOnde;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboxDocumentoDependente;
+        public System.Windows.Forms.MaskedTextBox txtOrgEmissorDependente;
+        public System.Windows.Forms.MaskedTextBox txtPassaporteDependente;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCertidaoNascimentoDependente;
     }
 }

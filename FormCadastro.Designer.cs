@@ -88,6 +88,7 @@
             this.btnLimpar = new FontAwesome.Sharp.IconButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.cboxDocumentoDependente = new System.Windows.Forms.ComboBox();
             this.cboxGrauParentesco = new System.Windows.Forms.ComboBox();
             this.txtDataNascimentoDependente = new System.Windows.Forms.MaskedTextBox();
@@ -104,7 +105,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -176,7 +176,7 @@
             // btnEncerrarCamera
             // 
             this.btnEncerrarCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncerrarCamera.Location = new System.Drawing.Point(832, 355);
+            this.btnEncerrarCamera.Location = new System.Drawing.Point(831, 355);
             this.btnEncerrarCamera.Name = "btnEncerrarCamera";
             this.btnEncerrarCamera.Size = new System.Drawing.Size(91, 33);
             this.btnEncerrarCamera.TabIndex = 18;
@@ -190,7 +190,7 @@
             this.btnImportarFoto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImportarFoto.IconColor = System.Drawing.Color.Black;
             this.btnImportarFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImportarFoto.Location = new System.Drawing.Point(832, 394);
+            this.btnImportarFoto.Location = new System.Drawing.Point(831, 394);
             this.btnImportarFoto.Name = "btnImportarFoto";
             this.btnImportarFoto.Size = new System.Drawing.Size(91, 30);
             this.btnImportarFoto.TabIndex = 13;
@@ -204,7 +204,7 @@
             this.btnTirarFoto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnTirarFoto.IconColor = System.Drawing.Color.Black;
             this.btnTirarFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTirarFoto.Location = new System.Drawing.Point(632, 394);
+            this.btnTirarFoto.Location = new System.Drawing.Point(631, 394);
             this.btnTirarFoto.Name = "btnTirarFoto";
             this.btnTirarFoto.Size = new System.Drawing.Size(91, 30);
             this.btnTirarFoto.TabIndex = 13;
@@ -218,7 +218,7 @@
             this.btnIniciarCamera.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnIniciarCamera.IconColor = System.Drawing.Color.Black;
             this.btnIniciarCamera.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIniciarCamera.Location = new System.Drawing.Point(632, 355);
+            this.btnIniciarCamera.Location = new System.Drawing.Point(631, 355);
             this.btnIniciarCamera.Name = "btnIniciarCamera";
             this.btnIniciarCamera.Size = new System.Drawing.Size(91, 33);
             this.btnIniciarCamera.TabIndex = 13;
@@ -231,10 +231,10 @@
             this.imgCamera.BackgroundImage = global::ANAYA_VIAGENS.Properties.Resources.Socio_sem_foto;
             this.imgCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgCamera.Image = global::ANAYA_VIAGENS.Properties.Resources.Socio_sem_foto;
-            this.imgCamera.Location = new System.Drawing.Point(571, 19);
+            this.imgCamera.Location = new System.Drawing.Point(609, 19);
             this.imgCamera.Name = "imgCamera";
-            this.imgCamera.Size = new System.Drawing.Size(412, 305);
-            this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgCamera.Size = new System.Drawing.Size(334, 305);
+            this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgCamera.TabIndex = 17;
             this.imgCamera.TabStop = false;
             // 
@@ -318,7 +318,7 @@
             this.cboxCamera.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboxCamera.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboxCamera.FormattingEnabled = true;
-            this.cboxCamera.Location = new System.Drawing.Point(632, 330);
+            this.cboxCamera.Location = new System.Drawing.Point(631, 330);
             this.cboxCamera.Name = "cboxCamera";
             this.cboxCamera.Size = new System.Drawing.Size(291, 21);
             this.cboxCamera.TabIndex = 6;
@@ -835,6 +835,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dependentes";
             // 
+            // txtCertidaoNascimentoDependente
+            // 
+            this.txtCertidaoNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCertidaoNascimentoDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
+            this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 26);
+            this.txtCertidaoNascimentoDependente.TabIndex = 20;
+            // 
             // cboxDocumentoDependente
             // 
             this.cboxDocumentoDependente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1018,14 +1026,6 @@
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tem Autorização?";
-            // 
-            // txtCertidaoNascimentoDependente
-            // 
-            this.txtCertidaoNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCertidaoNascimentoDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
-            this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 26);
-            this.txtCertidaoNascimentoDependente.TabIndex = 20;
             // 
             // FormCadastro
             // 

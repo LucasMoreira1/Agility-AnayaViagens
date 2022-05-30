@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using AForge.Imaging.Filters;
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.IO;
@@ -22,6 +23,7 @@ namespace Programa_STPMJ
         }
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
+        Bitmap bitmap;
 
         private void ResetMe()
         {
@@ -232,7 +234,18 @@ namespace Programa_STPMJ
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            imgCamera.Image = (Bitmap)eventArgs.Frame.Clone();
+            //imgCamera.Image = (Bitmap)eventArgs.Frame.Clone();
+
+            bitmap = (Bitmap)eventArgs.Frame.Clone();
+
+            ///add these two lines to mirror the image
+            var filter = new Mirror(false, true);
+
+            filter.ApplyInPlace(bitmap);
+
+            ///
+
+            imgCamera.Image = bitmap;
         }
 
         private void FormCadastro_FormClosing(object sender, FormClosingEventArgs e)
@@ -257,6 +270,7 @@ namespace Programa_STPMJ
 
         public void btnEncerrarCamera_Click(object sender, EventArgs e)
         {
+            EncerrarCamera();
             imgCamera.Image = null;
         }
 

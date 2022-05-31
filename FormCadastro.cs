@@ -27,16 +27,32 @@ namespace Programa_STPMJ
 
         private void ResetMe()
         {
-            
+            //Zerar comboBox identificação cliente
+            cboxDocumento.SelectedIndex = -1;
+            cboxEstadoCivil.SelectedIndex = -1;
+            cboxEmbarque.SelectedIndex = -1;
+            cboxPet.SelectedIndex = -1;
+
+            //Zerar comboBox identificação dependentes
+            cboxDocumentoDependente.SelectedIndex = -1;
+            cboxGrauParentesco.SelectedIndex = -1;
+            cboxAutorizacaoDependente.SelectedIndex = -1;
+
+            //Limpar campos identificação cliente
             txtNome.Text = "";
             txtRG.Text = "";
+            txtOrgEmissor.Text = "";
             txtCPF.Text = "";
-            txtDataNascimento.Text = "";
-            cboxEstadoCivil.SelectedIndex = 0;
-            cboxDocumento.SelectedIndex = 0;
-            cboxDocumentoDependente.SelectedIndex = 0;
+            txtPassaporte.Text = "";
+            txtDataNascimento.Text = "";            
             txtTelefone.Text = "";
             txtEmail.Text = "";
+            txtNacionalidade.Text = "";
+            txtDataCasamento.Text = "";
+            txtEmbarqueOnde.Text = "";
+            imgCamera.Image = null;
+
+            //Limpar campos identificação endereço
             txtCEP.Text = "";
             txtLogradouro.Text = "";
             txtNumero.Text = "";
@@ -45,13 +61,15 @@ namespace Programa_STPMJ
             txtCidade.Text = "";
             txtEstado.Text = "";
             txtObservacao.Text = "";
-            imgCamera.Image = null;
 
+            //Limpar campos identificação dependente
             txtNomeDependente.Text = "";
             txtDataNascimentoDependente.Text = "";
-            cboxGrauParentesco.Text = "";
             txtRGDependente.Text = "";
             txtCPFDependente.Text = "";
+            txtPassaporteDependente.Text = "";
+            txtCertidaoNascimentoDependente.Text = "";
+            
         }
 
         private void Executar(string mySQL, string param)
@@ -82,12 +100,18 @@ namespace Programa_STPMJ
            
             CRUD.cmd.Parameters.AddWithValue("nome", txtNome.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("rg", txtRG.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("orgemissor", txtOrgEmissor.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cpf", txtCPF.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("data_nascimento", txtDataNascimento.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("estado_civil", cboxEstadoCivil.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("data_cadastro", txtDataCadastro.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("passaporte", txtPassaporte.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("estadocivil", cboxEstadoCivil.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("datanascimento", txtDataNascimento.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("telefone", txtTelefone.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("email", txtEmail.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("nacionalidade", txtNacionalidade.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("datacasamento", txtDataCasamento.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("embarque", cboxEmbarque.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("embarqueonde", txtEmbarqueOnde.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("pet", cboxPet.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cep", txtCEP.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("logradouro", txtLogradouro.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("numero", txtNumero.Text.Trim());
@@ -97,12 +121,18 @@ namespace Programa_STPMJ
             CRUD.cmd.Parameters.AddWithValue("estado", txtEstado.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("observacao", txtObservacao.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("foto", img);
+            CRUD.cmd.Parameters.AddWithValue("data_cadastro", txtDataCadastro.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("Cad_numero", txtCadNumero.Text.Trim());
+            
             CRUD.cmd.Parameters.AddWithValue("nomeDependente", txtNomeDependente.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("DataNascimentoDependente", txtDataNascimentoDependente.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("GrauParentesco", cboxGrauParentesco.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("RGDependente", txtRGDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("orgemissordependente", txtOrgEmissorDependente.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("CPFDependente", txtCPFDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("certidaonascimento", txtCertidaoNascimentoDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("GrauParentesco", cboxGrauParentesco.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("DataNascimentoDependente", txtDataNascimentoDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("autorizacao", cboxAutorizacaoDependente.Text.Trim());
+
 
         }
 
@@ -119,14 +149,17 @@ namespace Programa_STPMJ
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            
 
-            CRUD.sql = "INSERT INTO CLIENTES(nome,rg,cpf,datanascimento,estadocivil," +
-                "telefone,email,cep,logradouro,numero,complemento,bairro,cidade,estado," +
-                "observacao,foto,datacadastro)" +
-                "Values(@nome,@rg,@cpf,@data_nascimento,@estado_civil," +
-                "@telefone,@email,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
-                "@observacao,@foto,@data_cadastro);";
+            CRUD.sql = "INSERT INTO CLIENTES(nome)" +
+                "Values(@nome);";
+
+
+            //CRUD.sql = "INSERT INTO CLIENTES(nome,rg,orgemissor,cpf,passaporte,estadocivil,datanascimento," +
+            //    "telefone,email,nacionalidade,datacasamento,embarque,outroembarque,pet,cep,logradouro,numero,complemento,bairro,cidade,estado," +
+            //    "observacao,foto,datacadastro)" +
+            //    "Values(@nome,@rg,@orgemissor,@cpf,@passaporte,@estadocivil,@datanascimento," +
+            //    "@telefone,@email,@nacionalidade,@datacasamento,@embarque,@outroembarque,@pet,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
+            //    "@observacao,@foto,@data_cadastro);";
 
 
             Executar(CRUD.sql, "Insert");

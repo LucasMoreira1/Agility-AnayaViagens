@@ -150,16 +150,13 @@ namespace Programa_STPMJ
                 return;
             }
 
-            CRUD.sql = "INSERT INTO CLIENTES(nome)" +
-                "Values(@nome);";
 
-
-            //CRUD.sql = "INSERT INTO CLIENTES(nome,rg,orgemissor,cpf,passaporte,estadocivil,datanascimento," +
-            //    "telefone,email,nacionalidade,datacasamento,embarque,outroembarque,pet,cep,logradouro,numero,complemento,bairro,cidade,estado," +
-            //    "observacao,foto,datacadastro)" +
-            //    "Values(@nome,@rg,@orgemissor,@cpf,@passaporte,@estadocivil,@datanascimento," +
-            //    "@telefone,@email,@nacionalidade,@datacasamento,@embarque,@outroembarque,@pet,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
-            //    "@observacao,@foto,@data_cadastro);";
+            CRUD.sql = "INSERT INTO CLIENTES(nome,rg,orgemissor,cpf,passaporte,estadocivil,datanascimento," +
+                "telefone,email,nacionalidade,datacasamento,embarque,embarqueonde,pet,cep,logradouro,numero,complemento,bairro,cidade,estado," +
+                "observacao,foto,datacadastro)" +
+                "Values(@nome,@rg,@orgemissor,@cpf,@passaporte,@estadocivil,@datanascimento," +
+                "@telefone,@email,@nacionalidade,@datacasamento,@embarque,@embarqueonde,@pet,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
+                "@observacao,@foto,@data_cadastro);";
 
 
             Executar(CRUD.sql, "Insert");

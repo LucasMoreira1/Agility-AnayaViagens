@@ -128,6 +128,7 @@ namespace Programa_STPMJ
             CRUD.cmd.Parameters.AddWithValue("RGDependente", txtRGDependente.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("orgemissordependente", txtOrgEmissorDependente.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("CPFDependente", txtCPFDependente.Text.Trim());
+            CRUD.cmd.Parameters.AddWithValue("PassaporteDependente", txtPassaporteDependente.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("certidaonascimento", txtCertidaoNascimentoDependente.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("GrauParentesco", cboxGrauParentesco.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("DataNascimentoDependente", txtDataNascimentoDependente.Text.Trim());
@@ -342,10 +343,10 @@ namespace Programa_STPMJ
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-
-            CRUD.sql = "INSERT INTO DEPENDENTES(CadReferencia,Nome,GrauParentesco,DataNascimento,RG,CPF)" +
-                "Values(@Cad_numero, @nomeDependente, @GrauParentesco, @DataNascimentoDependente, @RGDependente, @CPFDependente);";
+            
+            CRUD.sql = "INSERT INTO DEPENDENTES(CadReferencia,Nome,RG,OrgEmissor,CPF,Passaporte,CertidaoNascimento,GrauParentesco,DataNascimento,Autorizacao)" +
+                "Values(@Cad_numero, @nomeDependente, @RGDependente, @orgemissordependente, @CPFDependente, @PassaporteDependente, @certidaonascimento, " +
+                "@GrauParentesco, @DataNascimentoDependente, @autorizacao);";
 
 
             Executar(CRUD.sql, "Insert");
@@ -491,6 +492,22 @@ namespace Programa_STPMJ
                 txtOrgEmissorDependente.Visible = false;
                 txtCertidaoNascimentoDependente.Visible = true;
             }
+        }
+
+        private void btnAtualizarDependente_Click(object sender, EventArgs e)
+        {
+            CRUD.sql = "UPDATE DEPENDENTES SET Nome = @nomeDependente, RG = @RGDependente, OrgEmissor = @orgemissordependente,CPF = @CPFDependente," +
+                "Passaporte = @PassaporteDependente, CertidaoNascimento = @certidaonascimento, GrauParentesco = @GrauParentesco,DataNascimento = @DataNascimentoDependente" +
+                ",Autorizacao = @autorizacao WHERE CadNumero = @cad_numero";
+
+
+            Executar(CRUD.sql, "Update");
+
+            MessageBox.Show("Dados atualizados.", "Cadastro",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ResetMe();
+            this.Close();
         }
     }
 }

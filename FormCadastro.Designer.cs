@@ -105,6 +105,7 @@
             this.cboxAutorizacaoDependente = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAtualizarDependente = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -823,6 +824,7 @@
             this.groupBox5.Controls.Add(this.cboxDocumentoDependente);
             this.groupBox5.Controls.Add(this.cboxGrauParentesco);
             this.groupBox5.Controls.Add(this.txtDataNascimentoDependente);
+            this.groupBox5.Controls.Add(this.btnAtualizarDependente);
             this.groupBox5.Controls.Add(this.btnListaDependente);
             this.groupBox5.Controls.Add(this.btnAdcDependente);
             this.groupBox5.Controls.Add(this.txtNomeDependente);
@@ -900,7 +902,7 @@
             // btnListaDependente
             // 
             this.btnListaDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListaDependente.Location = new System.Drawing.Point(680, 97);
+            this.btnListaDependente.Location = new System.Drawing.Point(680, 125);
             this.btnListaDependente.Name = "btnListaDependente";
             this.btnListaDependente.Size = new System.Drawing.Size(103, 26);
             this.btnListaDependente.TabIndex = 0;
@@ -1037,6 +1039,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tem Autorização?";
             // 
+            // btnAtualizarDependente
+            // 
+            this.btnAtualizarDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarDependente.Location = new System.Drawing.Point(680, 93);
+            this.btnAtualizarDependente.Name = "btnAtualizarDependente";
+            this.btnAtualizarDependente.Size = new System.Drawing.Size(103, 26);
+            this.btnAtualizarDependente.TabIndex = 0;
+            this.btnAtualizarDependente.TabStop = false;
+            this.btnAtualizarDependente.Text = "Atualizar";
+            this.btnAtualizarDependente.UseVisualStyleBackColor = true;
+            this.btnAtualizarDependente.Click += new System.EventHandler(this.btnAtualizarDependente_Click);
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1115,12 +1129,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnListaDependente;
         private System.Windows.Forms.Button btnAdcDependente;
-        private System.Windows.Forms.TextBox txtNomeDependente;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox cboxGrauParentesco;
-        private System.Windows.Forms.MaskedTextBox txtDataNascimentoDependente;
         public System.Windows.Forms.MaskedTextBox txtRGDependente;
         public System.Windows.Forms.MaskedTextBox txtCPFDependente;
         private System.Windows.Forms.ComboBox cboxDocumento;
@@ -1139,12 +1150,16 @@
         public System.Windows.Forms.TextBox txtEmbarqueOnde;
         public System.Windows.Forms.ComboBox cboxPet;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboxDocumentoDependente;
         public System.Windows.Forms.MaskedTextBox txtOrgEmissorDependente;
         public System.Windows.Forms.MaskedTextBox txtPassaporteDependente;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ComboBox cboxAutorizacaoDependente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCertidaoNascimentoDependente;
+        private System.Windows.Forms.Button btnAtualizarDependente;
+        public System.Windows.Forms.TextBox txtNomeDependente;
+        public System.Windows.Forms.ComboBox cboxGrauParentesco;
+        public System.Windows.Forms.MaskedTextBox txtDataNascimentoDependente;
+        public System.Windows.Forms.ComboBox cboxDocumentoDependente;
+        public System.Windows.Forms.TextBox txtCertidaoNascimentoDependente;
     }
 }

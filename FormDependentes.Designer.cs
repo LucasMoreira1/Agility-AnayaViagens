@@ -36,6 +36,7 @@
             this.txtCadReferencia = new System.Windows.Forms.TextBox();
             this.txtNomeReferencia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,14 +111,26 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(772, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(877, 230);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(794, 6);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(99, 22);
+            this.btnExcluir.TabIndex = 4;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FormDependentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 280);
+            this.ClientSize = new System.Drawing.Size(905, 280);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtNomeReferencia);
             this.Controls.Add(this.txtCadReferencia);
@@ -136,8 +149,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.TextBox txtCadReferencia;
         public System.Windows.Forms.TextBox txtNomeReferencia;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

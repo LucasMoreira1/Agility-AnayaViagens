@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     class CRUD
     {

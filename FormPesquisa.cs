@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
 
     public partial class FormPesquisa : Form

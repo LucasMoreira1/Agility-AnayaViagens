@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     partial class FormPesquisa
     {

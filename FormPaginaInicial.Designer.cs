@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     partial class formPaginaInicial
     {
@@ -43,7 +43,7 @@ namespace Programa_STPMJ
             this.btnPesquisarCliente = new FontAwesome.Sharp.IconButton();
             this.btnPesquisar = new FontAwesome.Sharp.IconButton();
             this.panelCadastros = new System.Windows.Forms.Panel();
-            this.btnCadastroEmpresa = new FontAwesome.Sharp.IconButton();
+            this.btnCriarPacotes = new FontAwesome.Sharp.IconButton();
             this.btnCadastroCliente = new FontAwesome.Sharp.IconButton();
             this.btnCadastros = new FontAwesome.Sharp.IconButton();
             this.btnPaginaInicial = new FontAwesome.Sharp.IconButton();
@@ -311,7 +311,7 @@ namespace Programa_STPMJ
             // panelCadastros
             // 
             this.panelCadastros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelCadastros.Controls.Add(this.btnCadastroEmpresa);
+            this.panelCadastros.Controls.Add(this.btnCriarPacotes);
             this.panelCadastros.Controls.Add(this.btnCadastroCliente);
             this.panelCadastros.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCadastros.Location = new System.Drawing.Point(0, 240);
@@ -319,30 +319,30 @@ namespace Programa_STPMJ
             this.panelCadastros.Size = new System.Drawing.Size(298, 94);
             this.panelCadastros.TabIndex = 2;
             // 
-            // btnCadastroEmpresa
+            // btnCriarPacotes
             // 
-            this.btnCadastroEmpresa.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastroEmpresa.FlatAppearance.BorderSize = 0;
-            this.btnCadastroEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(126)))), ((int)(((byte)(209)))));
-            this.btnCadastroEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(186)))), ((int)(((byte)(209)))));
-            this.btnCadastroEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastroEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
-            this.btnCadastroEmpresa.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.btnCadastroEmpresa.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(166)))), ((int)(((byte)(209)))));
-            this.btnCadastroEmpresa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCadastroEmpresa.IconSize = 35;
-            this.btnCadastroEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroEmpresa.Location = new System.Drawing.Point(0, 45);
-            this.btnCadastroEmpresa.Name = "btnCadastroEmpresa";
-            this.btnCadastroEmpresa.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCadastroEmpresa.Size = new System.Drawing.Size(315, 45);
-            this.btnCadastroEmpresa.TabIndex = 3;
-            this.btnCadastroEmpresa.Text = "Cadastrar Pacotes";
-            this.btnCadastroEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCadastroEmpresa.UseVisualStyleBackColor = false;
-            this.btnCadastroEmpresa.Click += new System.EventHandler(this.btnCadastroEmpresa_Click);
+            this.btnCriarPacotes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCriarPacotes.FlatAppearance.BorderSize = 0;
+            this.btnCriarPacotes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(126)))), ((int)(((byte)(209)))));
+            this.btnCriarPacotes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(186)))), ((int)(((byte)(209)))));
+            this.btnCriarPacotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriarPacotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriarPacotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
+            this.btnCriarPacotes.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.btnCriarPacotes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(166)))), ((int)(((byte)(209)))));
+            this.btnCriarPacotes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCriarPacotes.IconSize = 35;
+            this.btnCriarPacotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCriarPacotes.Location = new System.Drawing.Point(0, 45);
+            this.btnCriarPacotes.Name = "btnCriarPacotes";
+            this.btnCriarPacotes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCriarPacotes.Size = new System.Drawing.Size(315, 45);
+            this.btnCriarPacotes.TabIndex = 3;
+            this.btnCriarPacotes.Text = "Cadastrar Pacotes";
+            this.btnCriarPacotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCriarPacotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCriarPacotes.UseVisualStyleBackColor = false;
+            this.btnCriarPacotes.Click += new System.EventHandler(this.btnCriarPacotes_Click);
             // 
             // btnCadastroCliente
             // 
@@ -521,7 +521,7 @@ namespace Programa_STPMJ
         private FontAwesome.Sharp.IconButton btnPesquisarCliente;
         private FontAwesome.Sharp.IconButton btnPesquisar;
         private System.Windows.Forms.Panel panelCadastros;
-        private FontAwesome.Sharp.IconButton btnCadastroEmpresa;
+        private FontAwesome.Sharp.IconButton btnCriarPacotes;
         private FontAwesome.Sharp.IconButton btnCadastroCliente;
         private FontAwesome.Sharp.IconButton btnCadastros;
         private System.Windows.Forms.Panel panelFormTitulo;

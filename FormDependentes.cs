@@ -3,7 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     public partial class FormDependentes : Form
     {

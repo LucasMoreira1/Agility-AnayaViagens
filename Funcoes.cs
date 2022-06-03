@@ -3,7 +3,7 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     class Funcoes
     {

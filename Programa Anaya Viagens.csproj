@@ -184,6 +184,12 @@
     <Compile Include="FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCriarPacote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCriarPacote.Designer.cs">
+      <DependentUpon>FormCriarPacote.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDependentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCriarPacote.resx">
+      <DependentUpon>FormCriarPacote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDependentes.resx">
       <DependentUpon>FormDependentes.cs</DependentUpon>

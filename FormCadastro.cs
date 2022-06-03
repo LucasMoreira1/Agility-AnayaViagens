@@ -8,7 +8,7 @@ using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.IO;
 
-namespace Programa_STPMJ
+namespace ANAYA_VIAGENS
 {
     public partial class FormCadastro : Form
     {

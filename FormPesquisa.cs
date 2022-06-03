@@ -136,7 +136,7 @@ namespace Programa_STPMJ
             if (e.RowIndex != -1)
             {
                 DataGridView dgv = dataGridView1;
-                this.id = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                this.id = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
                 txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
                 btnAtualizar.Text = "Atualizar (" + this.id + ")";
                 btnDeletar.Text = "Deletar (" + this.id + ")";
@@ -219,6 +219,34 @@ namespace Programa_STPMJ
         {
             if (e.KeyCode == Keys.Enter)
                 btnPesquisar_Click(sender,e);
+        }
+
+        private void txtFiltro1_KeyDown(object sender, KeyEventArgs e)
+        {
+            CRUD.sql = "SELECT * FROM CLIENTES WHERE CadNumero = '" + txtFiltro1.Text.Trim() + "';";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+            if (dt.Rows.Count > 0)
+            {
+                row = Convert.ToInt32(dt.Rows.Count.ToString());
+            }
+            else
+            {
+                row = 0;
+            }
+
+            toolStripStatusLabel1.Text = "Número de linha(s): " + row.ToString();
+
+            DataGridView dgv = dataGridView1;
+
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

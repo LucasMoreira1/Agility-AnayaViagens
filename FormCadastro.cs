@@ -337,9 +337,10 @@ namespace Programa_STPMJ
 
         private void btnAdcDependente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text.Trim()))
+            if (string.IsNullOrEmpty(txtNome.Text.Trim()) || 
+                    (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
             {
-                MessageBox.Show("Por favor insira o Nome completo", "Dados Obrigatórios",
+                MessageBox.Show("Por favor finalize o cadastro do cliente e volte após para cadastrar os dependentes.", "Dados Obrigatórios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
@@ -361,10 +362,15 @@ namespace Programa_STPMJ
         private void ResetDependente()
         {
             txtNomeDependente.Text = "";
+            txtRGDependente.Text = "";
+            txtOrgEmissorDependente.Text = "";
+            txtCPFDependente.Text = "";
+            txtPassaporteDependente.Text = "";
+            txtCertidaoNascimentoDependente.Text = "";
             txtDataNascimentoDependente.Text = "";
             cboxGrauParentesco.Text = "";
-            txtRGDependente.Text = "";
-            txtCPFDependente.Text = "";
+            cboxAutorizacaoDependente.Text = "";
+            
         }
 
         private void btnListaDependente_Click(object sender, EventArgs e)
@@ -498,7 +504,7 @@ namespace Programa_STPMJ
         {
             CRUD.sql = "UPDATE DEPENDENTES SET Nome = @nomeDependente, RG = @RGDependente, OrgEmissor = @orgemissordependente,CPF = @CPFDependente," +
                 "Passaporte = @PassaporteDependente, CertidaoNascimento = @certidaonascimento, GrauParentesco = @GrauParentesco,DataNascimento = @DataNascimentoDependente" +
-                ",Autorizacao = @autorizacao WHERE CadNumero = @cad_numero";
+                ",Autorizacao = @autorizacao WHERE CadReferencia = @cad_numero";
 
 
             Executar(CRUD.sql, "Update");

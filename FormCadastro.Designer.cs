@@ -820,7 +820,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtCertidaoNascimentoDependente);
             this.groupBox5.Controls.Add(this.cboxDocumentoDependente);
             this.groupBox5.Controls.Add(this.cboxGrauParentesco);
             this.groupBox5.Controls.Add(this.txtDataNascimentoDependente);
@@ -829,15 +828,16 @@
             this.groupBox5.Controls.Add(this.btnAdcDependente);
             this.groupBox5.Controls.Add(this.txtNomeDependente);
             this.groupBox5.Controls.Add(this.txtOrgEmissorDependente);
-            this.groupBox5.Controls.Add(this.txtPassaporteDependente);
-            this.groupBox5.Controls.Add(this.txtRGDependente);
-            this.groupBox5.Controls.Add(this.txtCPFDependente);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.label28);
             this.groupBox5.Controls.Add(this.cboxAutorizacaoDependente);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.txtRGDependente);
+            this.groupBox5.Controls.Add(this.txtCPFDependente);
+            this.groupBox5.Controls.Add(this.txtCertidaoNascimentoDependente);
+            this.groupBox5.Controls.Add(this.txtPassaporteDependente);
             this.groupBox5.Location = new System.Drawing.Point(12, 461);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(999, 211);
@@ -852,6 +852,7 @@
             this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
             this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 22);
             this.txtCertidaoNascimentoDependente.TabIndex = 3;
+            this.txtCertidaoNascimentoDependente.Visible = false;
             // 
             // cboxDocumentoDependente
             // 
@@ -946,7 +947,7 @@
             // 
             this.txtPassaporteDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassaporteDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtPassaporteDependente.Mask = ">??######";
+            this.txtPassaporteDependente.Mask = ">&&&&&&&&";
             this.txtPassaporteDependente.Name = "txtPassaporteDependente";
             this.txtPassaporteDependente.Size = new System.Drawing.Size(123, 22);
             this.txtPassaporteDependente.TabIndex = 4;
@@ -957,10 +958,11 @@
             // 
             this.txtRGDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRGDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtRGDependente.Mask = "00,000,000-0";
+            this.txtRGDependente.Mask = ">&&,&&&,&&&-&&";
             this.txtRGDependente.Name = "txtRGDependente";
             this.txtRGDependente.Size = new System.Drawing.Size(123, 22);
             this.txtRGDependente.TabIndex = 5;
+            this.txtRGDependente.Visible = false;
             this.txtRGDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // txtCPFDependente
@@ -971,6 +973,7 @@
             this.txtCPFDependente.Name = "txtCPFDependente";
             this.txtCPFDependente.Size = new System.Drawing.Size(123, 22);
             this.txtCPFDependente.TabIndex = 2;
+            this.txtCPFDependente.Visible = false;
             this.txtCPFDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // label25

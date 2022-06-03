@@ -67,10 +67,10 @@ namespace Programa_STPMJ
             this.btnPesquisar.IconColor = System.Drawing.Color.Black;
             this.btnPesquisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPesquisar.IconSize = 32;
-            this.btnPesquisar.Location = new System.Drawing.Point(580, 44);
+            this.btnPesquisar.Location = new System.Drawing.Point(739, 40);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnPesquisar.Size = new System.Drawing.Size(200, 47);
+            this.btnPesquisar.Size = new System.Drawing.Size(146, 47);
             this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -90,10 +90,10 @@ namespace Programa_STPMJ
             this.btnMostrarTodos.IconColor = System.Drawing.Color.Black;
             this.btnMostrarTodos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMostrarTodos.IconSize = 32;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(580, 97);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(739, 93);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMostrarTodos.Size = new System.Drawing.Size(200, 47);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(146, 47);
             this.btnMostrarTodos.TabIndex = 1;
             this.btnMostrarTodos.Text = "Mostrar Todos";
             this.btnMostrarTodos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,10 +286,10 @@ namespace Programa_STPMJ
             this.btnAtualizar.IconColor = System.Drawing.Color.Black;
             this.btnAtualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAtualizar.IconSize = 32;
-            this.btnAtualizar.Location = new System.Drawing.Point(837, 44);
+            this.btnAtualizar.Location = new System.Drawing.Point(891, 40);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnAtualizar.Size = new System.Drawing.Size(200, 47);
+            this.btnAtualizar.Size = new System.Drawing.Size(146, 47);
             this.btnAtualizar.TabIndex = 1;
             this.btnAtualizar.Text = "Atualizar ( )";
             this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -309,10 +309,10 @@ namespace Programa_STPMJ
             this.btnDeletar.IconColor = System.Drawing.Color.Black;
             this.btnDeletar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeletar.IconSize = 32;
-            this.btnDeletar.Location = new System.Drawing.Point(837, 97);
+            this.btnDeletar.Location = new System.Drawing.Point(891, 93);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDeletar.Size = new System.Drawing.Size(200, 47);
+            this.btnDeletar.Size = new System.Drawing.Size(146, 47);
             this.btnDeletar.TabIndex = 1;
             this.btnDeletar.Text = "Deletar ( )";
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -347,7 +347,7 @@ namespace Programa_STPMJ
             this.txtFiltroMatricula.Name = "txtFiltroMatricula";
             this.txtFiltroMatricula.Size = new System.Drawing.Size(121, 22);
             this.txtFiltroMatricula.TabIndex = 11;
-            this.txtFiltroMatricula.Text = "CadNumero";
+            this.txtFiltroMatricula.Text = "Cadastro";
             // 
             // lblFiltro1
             // 
@@ -367,7 +367,7 @@ namespace Programa_STPMJ
             this.txtFiltro1.Name = "txtFiltro1";
             this.txtFiltro1.Size = new System.Drawing.Size(121, 22);
             this.txtFiltro1.TabIndex = 4;
-            this.txtFiltro1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.txtFiltro1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFiltro1_KeyDown);
             // 
             // FormPesquisa
             // 

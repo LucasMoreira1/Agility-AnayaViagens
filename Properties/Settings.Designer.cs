@@ -22,5 +22,16 @@ namespace ANAYA_VIAGENS.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\Lucas Moreira\\Desktop\\Agi" +
+            "lity\\Projetos\\Projetos\\Projeto 5 - Sistema Sindicato\\DB_Sindicato_STPMJ.accdb\"")]
+        public string DB_Sindicato_STPMJConnectionString {
+            get {
+                return ((string)(this["DB_Sindicato_STPMJConnectionString"]));
+            }
+        }
     }
 }

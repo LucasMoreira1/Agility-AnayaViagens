@@ -29,7 +29,7 @@
     <UpdateUrl>https://raw.githubusercontent.com/LucasMoreira1/Agility-AnayaViagens/master/published/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.12</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -121,24 +121,6 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1210.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.1210.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
     </Reference>
@@ -217,12 +199,6 @@
     <Compile Include="FormDependentes.Designer.cs">
       <DependentUpon>FormDependentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDocumentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDocumentos.Designer.cs">
-      <DependentUpon>FormDocumentos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,13 +220,6 @@
     <Compile Include="Funcoes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormRelatorioTransporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRelatorioTransporte.Designer.cs">
-      <DependentUpon>FormRelatorioTransporte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,9 +228,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDependentes.resx">
       <DependentUpon>FormDependentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDocumentos.resx">
-      <DependentUpon>FormDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
@@ -279,10 +245,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RelatorioTransporte.rdlc" />
-    <EmbeddedResource Include="FormRelatorioTransporte.resx">
-      <DependentUpon>FormRelatorioTransporte.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Anaya_Viagens.snk" />
     <None Include="packages.config" />
     <None Include="Programa Anaya Viagens_1_TemporaryKey.pfx" />
@@ -305,19 +267,6 @@
     <Content Include="Agility_logo.ico" />
     <Content Include="icone.ico" />
     <Content Include="icone2_sem_fundo.ico" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Logo\icone.jpeg" />
     <None Include="Logo\logo_fundo_azul.jpeg" />
     <None Include="Logo\logo_png.png" />
@@ -354,9 +303,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="published\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets')" />

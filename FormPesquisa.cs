@@ -195,7 +195,8 @@ namespace ANAYA_VIAGENS
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            int registroSelecionado = Convert.ToInt32(txtRegistroSelecionado.Text);
+            string registroSelecionado = txtRegistroSelecionado.Text.Trim();
+            
 
             if(MessageBox.Show("Tem certeza que deseja deletar os dados selecionados?","Deletar Dados",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

@@ -245,6 +245,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="Anaya_Viagens.snk" />
     <None Include="packages.config" />
     <None Include="Programa Anaya Viagens_1_TemporaryKey.pfx" />

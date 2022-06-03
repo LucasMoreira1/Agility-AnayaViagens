@@ -107,6 +107,7 @@ namespace ANAYA_VIAGENS
 
         private void btnCarteirinha_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormDocumentos());
             //..
             //Codigos
             //..

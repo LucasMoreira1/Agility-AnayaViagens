@@ -41,14 +41,14 @@
             this.reportViewer1.Size = new System.Drawing.Size(1027, 987);
             this.reportViewer1.TabIndex = 0;
             // 
-            // RelatorioTransporte
+            // FormRelatorioTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1027, 987);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "RelatorioTransporte";
+            this.Name = "FormRelatorioTransporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioTransporte";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

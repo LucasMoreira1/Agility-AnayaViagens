@@ -29,8 +29,7 @@
     <UpdateUrl>https://raw.githubusercontent.com/LucasMoreira1/Agility-AnayaViagens/master/published/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.12</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

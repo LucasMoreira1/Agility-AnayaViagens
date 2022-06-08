@@ -106,11 +106,13 @@
             this.txtCPFDependente = new System.Windows.Forms.MaskedTextBox();
             this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.txtPassaporteDependente = new System.Windows.Forms.MaskedTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -122,8 +124,6 @@
             this.groupBox1.Controls.Add(this.btnIniciarCamera);
             this.groupBox1.Controls.Add(this.imgCamera);
             this.groupBox1.Controls.Add(this.txtOrgEmissor);
-            this.groupBox1.Controls.Add(this.txtPassaporte);
-            this.groupBox1.Controls.Add(this.txtRG);
             this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.txtDataCasamento);
             this.groupBox1.Controls.Add(this.txtDataNascimento);
@@ -151,6 +151,8 @@
             this.groupBox1.Controls.Add(this.txtEmbarqueOnde);
             this.groupBox1.Controls.Add(this.txtNacionalidade);
             this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtPassaporte);
+            this.groupBox1.Controls.Add(this.txtRG);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(999, 443);
@@ -275,6 +277,7 @@
             this.txtRG.TabIndex = 4;
             this.txtRG.Visible = false;
             this.txtRG.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtRG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarRG);
             // 
             // txtCPF
             // 
@@ -285,6 +288,7 @@
             this.txtCPF.Size = new System.Drawing.Size(123, 22);
             this.txtCPF.TabIndex = 2;
             this.txtCPF.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarCPF);
             // 
             // txtDataCasamento
             // 
@@ -829,6 +833,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Controls.Add(this.cboxDocumentoDependente);
             this.groupBox5.Controls.Add(this.cboxGrauParentesco);
             this.groupBox5.Controls.Add(this.txtDataNascimentoDependente);
@@ -1063,6 +1068,15 @@
             this.txtPassaporteDependente.Visible = false;
             this.txtPassaporteDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(831, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(143, 125);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.Visible = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1089,6 +1103,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1173,5 +1188,6 @@
         public System.Windows.Forms.MaskedTextBox txtDataNascimentoDependente;
         public System.Windows.Forms.ComboBox cboxDocumentoDependente;
         public System.Windows.Forms.TextBox txtCertidaoNascimentoDependente;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

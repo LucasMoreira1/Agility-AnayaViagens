@@ -162,7 +162,26 @@ namespace ANAYA_VIAGENS
 
             Executar(CRUD.sql, "Insert");
 
-            MessageBox.Show("Cliente registrado.", "Cadastro",
+            CRUD.sql = "SELECT LAST_INSERT_ID()";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+
+
+            DataGridView dgv = dataGridView1;
+            dgv.Visible = true;
+
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            // dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            string NumeroRegistro = dgv.CurrentCell.Value.ToString();
+            // .CurrentRow.Cells[0].Value
+            dgv.Visible = false;
+
+            MessageBox.Show("Sócio registrado. Registro número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //loadData("");
@@ -514,6 +533,143 @@ namespace ANAYA_VIAGENS
 
             ResetMe();
             this.Close();
+        }
+        public void pesquisaRG()
+        {
+
+            CRUD.sql = "SELECT * FROM CLIENTES WHERE RG LIKE '" + txtRG.Text.Trim() + "'";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+            DataGridView dgv = dataGridView1;
+
+            dgv.Visible = true;
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            btnSalvar.Visible = false;
+            btnAtualizar.Visible = true;
+
+            if (dgv.CurrentRow == null)
+            {
+                dgv.Visible = false;
+                MessageBox.Show("Não há cliente registrado com esse RG.");
+            }
+            else
+            {
+                txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+                txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+                txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+                txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+                txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+                cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+                txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+                txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+                txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+                txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+                txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+                cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+                txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+                cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+                txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+                txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+                txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+                txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+                txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+                txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+                txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+                txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+                MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+                imgCamera.Image = Image.FromStream(ms);
+                txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
+                txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+
+                dgv.Visible = false;
+                MessageBox.Show("Cliente localizado.");
+            }
+
+
+        }
+
+        private void PesquisarRG(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pesquisaRG();
+            }
+        }
+        public void pesquisaCPF()
+        {
+
+            CRUD.sql = "SELECT * FROM CLIENTES WHERE CPF LIKE '" + txtCPF.Text.Trim() + "'";
+
+            CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
+            DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
+            DataGridView dgv = dataGridView1;
+
+            dgv.Visible = true;
+            dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = true;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.DataSource = dt;
+            dgv.Columns["Foto"].Visible = false;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            btnSalvar.Visible = false;
+            btnAtualizar.Visible = true;
+            if (dgv.CurrentRow == null)
+            {
+                dgv.Visible = false;
+                MessageBox.Show("Não há cliente registrado com esse CPF.");
+                
+            }
+            else
+            {
+
+            txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);
+            txtCPF.Text = Convert.ToString(dgv.CurrentRow.Cells[3].Value);
+            txtPassaporte.Text = Convert.ToString(dgv.CurrentRow.Cells[4].Value);
+            cboxEstadoCivil.Text = Convert.ToString(dgv.CurrentRow.Cells[5].Value);
+            txtDataNascimento.Text = Convert.ToString(dgv.CurrentRow.Cells[6].Value);
+            txtTelefone.Text = Convert.ToString(dgv.CurrentRow.Cells[7].Value);
+            txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
+            txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
+            txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
+            cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
+            txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+            imgCamera.Image = Image.FromStream(ms);
+            txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
+            txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+
+            dgv.Visible = false;
+            MessageBox.Show("Cliente localizado.");
+            }
+
+
+        }
+
+        private void PesquisarCPF(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pesquisaCPF();
+            }
         }
     }
 }

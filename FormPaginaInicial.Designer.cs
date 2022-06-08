@@ -46,6 +46,7 @@ namespace ANAYA_VIAGENS
             this.btnCriarPacotes = new FontAwesome.Sharp.IconButton();
             this.btnCadastroCliente = new FontAwesome.Sharp.IconButton();
             this.btnCadastros = new FontAwesome.Sharp.IconButton();
+            this.btnTelaVendas = new FontAwesome.Sharp.IconButton();
             this.btnPaginaInicial = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -74,6 +75,7 @@ namespace ANAYA_VIAGENS
             this.panelEsquerdo.Controls.Add(this.btnPesquisar);
             this.panelEsquerdo.Controls.Add(this.panelCadastros);
             this.panelEsquerdo.Controls.Add(this.btnCadastros);
+            this.panelEsquerdo.Controls.Add(this.btnTelaVendas);
             this.panelEsquerdo.Controls.Add(this.btnPaginaInicial);
             this.panelEsquerdo.Controls.Add(this.panelLogo);
             this.panelEsquerdo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -97,7 +99,7 @@ namespace ANAYA_VIAGENS
             this.btnAjuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAjuda.IconSize = 35;
             this.btnAjuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjuda.Location = new System.Drawing.Point(0, 657);
+            this.btnAjuda.Location = new System.Drawing.Point(0, 702);
             this.btnAjuda.Name = "btnAjuda";
             this.btnAjuda.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnAjuda.Size = new System.Drawing.Size(298, 45);
@@ -114,7 +116,7 @@ namespace ANAYA_VIAGENS
             this.panelDocumentos.Controls.Add(this.btnCheques);
             this.panelDocumentos.Controls.Add(this.btnCarteirinha);
             this.panelDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDocumentos.Location = new System.Drawing.Point(0, 563);
+            this.panelDocumentos.Location = new System.Drawing.Point(0, 608);
             this.panelDocumentos.Name = "panelDocumentos";
             this.panelDocumentos.Size = new System.Drawing.Size(298, 94);
             this.panelDocumentos.TabIndex = 8;
@@ -184,7 +186,7 @@ namespace ANAYA_VIAGENS
             this.btnDocumentos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDocumentos.IconSize = 35;
             this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentos.Location = new System.Drawing.Point(0, 518);
+            this.btnDocumentos.Location = new System.Drawing.Point(0, 563);
             this.btnDocumentos.Name = "btnDocumentos";
             this.btnDocumentos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDocumentos.Size = new System.Drawing.Size(298, 45);
@@ -210,7 +212,7 @@ namespace ANAYA_VIAGENS
             this.btnRelatorios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRelatorios.IconSize = 35;
             this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorios.Location = new System.Drawing.Point(0, 473);
+            this.btnRelatorios.Location = new System.Drawing.Point(0, 518);
             this.btnRelatorios.Name = "btnRelatorios";
             this.btnRelatorios.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnRelatorios.Size = new System.Drawing.Size(298, 45);
@@ -227,7 +229,7 @@ namespace ANAYA_VIAGENS
             this.panelPesquisas.Controls.Add(this.btnPesquisarEmpresa);
             this.panelPesquisas.Controls.Add(this.btnPesquisarCliente);
             this.panelPesquisas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPesquisas.Location = new System.Drawing.Point(0, 379);
+            this.panelPesquisas.Location = new System.Drawing.Point(0, 424);
             this.panelPesquisas.Name = "panelPesquisas";
             this.panelPesquisas.Size = new System.Drawing.Size(298, 94);
             this.panelPesquisas.TabIndex = 4;
@@ -297,7 +299,7 @@ namespace ANAYA_VIAGENS
             this.btnPesquisar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPesquisar.IconSize = 35;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(0, 334);
+            this.btnPesquisar.Location = new System.Drawing.Point(0, 379);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPesquisar.Size = new System.Drawing.Size(298, 45);
@@ -314,7 +316,7 @@ namespace ANAYA_VIAGENS
             this.panelCadastros.Controls.Add(this.btnCriarPacotes);
             this.panelCadastros.Controls.Add(this.btnCadastroCliente);
             this.panelCadastros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCadastros.Location = new System.Drawing.Point(0, 240);
+            this.panelCadastros.Location = new System.Drawing.Point(0, 285);
             this.panelCadastros.Name = "panelCadastros";
             this.panelCadastros.Size = new System.Drawing.Size(298, 94);
             this.panelCadastros.TabIndex = 2;
@@ -384,7 +386,7 @@ namespace ANAYA_VIAGENS
             this.btnCadastros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCadastros.IconSize = 35;
             this.btnCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastros.Location = new System.Drawing.Point(0, 195);
+            this.btnCadastros.Location = new System.Drawing.Point(0, 240);
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCadastros.Size = new System.Drawing.Size(298, 45);
@@ -394,6 +396,31 @@ namespace ANAYA_VIAGENS
             this.btnCadastros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastros.UseVisualStyleBackColor = false;
             this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
+            // 
+            // btnTelaVendas
+            // 
+            this.btnTelaVendas.BackColor = System.Drawing.Color.White;
+            this.btnTelaVendas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTelaVendas.FlatAppearance.BorderSize = 0;
+            this.btnTelaVendas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(126)))), ((int)(((byte)(209)))));
+            this.btnTelaVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(186)))), ((int)(((byte)(209)))));
+            this.btnTelaVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelaVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(59)))), ((int)(((byte)(87)))));
+            this.btnTelaVendas.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnTelaVendas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(166)))), ((int)(((byte)(209)))));
+            this.btnTelaVendas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTelaVendas.IconSize = 35;
+            this.btnTelaVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTelaVendas.Location = new System.Drawing.Point(0, 195);
+            this.btnTelaVendas.Name = "btnTelaVendas";
+            this.btnTelaVendas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnTelaVendas.Size = new System.Drawing.Size(298, 45);
+            this.btnTelaVendas.TabIndex = 10;
+            this.btnTelaVendas.Text = "Tela de vendas";
+            this.btnTelaVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTelaVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTelaVendas.UseVisualStyleBackColor = false;
             // 
             // btnPaginaInicial
             // 
@@ -530,6 +557,7 @@ namespace ANAYA_VIAGENS
         public System.Windows.Forms.Panel panelFormCentral;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private FontAwesome.Sharp.IconButton btnPaginaInicial;
+        private FontAwesome.Sharp.IconButton btnTelaVendas;
     }
 }
 

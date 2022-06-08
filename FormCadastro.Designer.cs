@@ -88,24 +88,24 @@
             this.btnLimpar = new FontAwesome.Sharp.IconButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.cboxDocumentoDependente = new System.Windows.Forms.ComboBox();
             this.cboxGrauParentesco = new System.Windows.Forms.ComboBox();
             this.txtDataNascimentoDependente = new System.Windows.Forms.MaskedTextBox();
+            this.btnAtualizarDependente = new System.Windows.Forms.Button();
             this.btnListaDependente = new System.Windows.Forms.Button();
             this.btnAdcDependente = new System.Windows.Forms.Button();
             this.txtNomeDependente = new System.Windows.Forms.TextBox();
             this.txtOrgEmissorDependente = new System.Windows.Forms.MaskedTextBox();
-            this.txtPassaporteDependente = new System.Windows.Forms.MaskedTextBox();
-            this.txtRGDependente = new System.Windows.Forms.MaskedTextBox();
-            this.txtCPFDependente = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.cboxAutorizacaoDependente = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAtualizarDependente = new System.Windows.Forms.Button();
+            this.txtRGDependente = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPFDependente = new System.Windows.Forms.MaskedTextBox();
+            this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
+            this.txtPassaporteDependente = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -354,7 +354,16 @@
             this.cboxEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxEmbarque.FormattingEnabled = true;
             this.cboxEmbarque.Items.AddRange(new object[] {
-            "1-RODOVIARIA",
+            "1-ROD. SJC",
+            "2-ROD. JACAREI",
+            "3-ROD. GUARÁ",
+            "4-ROD. CACH. PTA",
+            "5-ROD. TAUBATE",
+            "1-SJC",
+            "2-JACAREI",
+            "3-GUARÁ",
+            "4-CACH. PTA",
+            "5-TAUBATE",
             "9-OUTRO"});
             this.cboxEmbarque.Location = new System.Drawing.Point(145, 321);
             this.cboxEmbarque.Name = "cboxEmbarque";
@@ -845,15 +854,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dependentes";
             // 
-            // txtCertidaoNascimentoDependente
-            // 
-            this.txtCertidaoNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCertidaoNascimentoDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
-            this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 22);
-            this.txtCertidaoNascimentoDependente.TabIndex = 3;
-            this.txtCertidaoNascimentoDependente.Visible = false;
-            // 
             // cboxDocumentoDependente
             // 
             this.cboxDocumentoDependente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -900,6 +900,18 @@
             this.txtDataNascimentoDependente.ValidatingType = typeof(System.DateTime);
             this.txtDataNascimentoDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
+            // btnAtualizarDependente
+            // 
+            this.btnAtualizarDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarDependente.Location = new System.Drawing.Point(680, 93);
+            this.btnAtualizarDependente.Name = "btnAtualizarDependente";
+            this.btnAtualizarDependente.Size = new System.Drawing.Size(103, 26);
+            this.btnAtualizarDependente.TabIndex = 0;
+            this.btnAtualizarDependente.TabStop = false;
+            this.btnAtualizarDependente.Text = "Atualizar";
+            this.btnAtualizarDependente.UseVisualStyleBackColor = true;
+            this.btnAtualizarDependente.Click += new System.EventHandler(this.btnAtualizarDependente_Click);
+            // 
             // btnListaDependente
             // 
             this.btnListaDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -942,39 +954,6 @@
             this.txtOrgEmissorDependente.TabIndex = 6;
             this.txtOrgEmissorDependente.Visible = false;
             this.txtOrgEmissorDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            // 
-            // txtPassaporteDependente
-            // 
-            this.txtPassaporteDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassaporteDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtPassaporteDependente.Mask = ">&&&&&&&&";
-            this.txtPassaporteDependente.Name = "txtPassaporteDependente";
-            this.txtPassaporteDependente.Size = new System.Drawing.Size(123, 22);
-            this.txtPassaporteDependente.TabIndex = 4;
-            this.txtPassaporteDependente.Visible = false;
-            this.txtPassaporteDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            // 
-            // txtRGDependente
-            // 
-            this.txtRGDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRGDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtRGDependente.Mask = ">&&,&&&,&&&-&&";
-            this.txtRGDependente.Name = "txtRGDependente";
-            this.txtRGDependente.Size = new System.Drawing.Size(123, 22);
-            this.txtRGDependente.TabIndex = 5;
-            this.txtRGDependente.Visible = false;
-            this.txtRGDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            // 
-            // txtCPFDependente
-            // 
-            this.txtCPFDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPFDependente.Location = new System.Drawing.Point(310, 61);
-            this.txtCPFDependente.Mask = "000,000,000-00";
-            this.txtCPFDependente.Name = "txtCPFDependente";
-            this.txtCPFDependente.Size = new System.Drawing.Size(123, 22);
-            this.txtCPFDependente.TabIndex = 2;
-            this.txtCPFDependente.Visible = false;
-            this.txtCPFDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // label25
             // 
@@ -1042,17 +1021,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tem Autorização?";
             // 
-            // btnAtualizarDependente
+            // txtRGDependente
             // 
-            this.btnAtualizarDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarDependente.Location = new System.Drawing.Point(680, 93);
-            this.btnAtualizarDependente.Name = "btnAtualizarDependente";
-            this.btnAtualizarDependente.Size = new System.Drawing.Size(103, 26);
-            this.btnAtualizarDependente.TabIndex = 0;
-            this.btnAtualizarDependente.TabStop = false;
-            this.btnAtualizarDependente.Text = "Atualizar";
-            this.btnAtualizarDependente.UseVisualStyleBackColor = true;
-            this.btnAtualizarDependente.Click += new System.EventHandler(this.btnAtualizarDependente_Click);
+            this.txtRGDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRGDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtRGDependente.Mask = ">&&,&&&,&&&-&&";
+            this.txtRGDependente.Name = "txtRGDependente";
+            this.txtRGDependente.Size = new System.Drawing.Size(123, 22);
+            this.txtRGDependente.TabIndex = 5;
+            this.txtRGDependente.Visible = false;
+            this.txtRGDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            // 
+            // txtCPFDependente
+            // 
+            this.txtCPFDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPFDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtCPFDependente.Mask = "000,000,000-00";
+            this.txtCPFDependente.Name = "txtCPFDependente";
+            this.txtCPFDependente.Size = new System.Drawing.Size(123, 22);
+            this.txtCPFDependente.TabIndex = 2;
+            this.txtCPFDependente.Visible = false;
+            this.txtCPFDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            // 
+            // txtCertidaoNascimentoDependente
+            // 
+            this.txtCertidaoNascimentoDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCertidaoNascimentoDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtCertidaoNascimentoDependente.Name = "txtCertidaoNascimentoDependente";
+            this.txtCertidaoNascimentoDependente.Size = new System.Drawing.Size(335, 22);
+            this.txtCertidaoNascimentoDependente.TabIndex = 3;
+            this.txtCertidaoNascimentoDependente.Visible = false;
+            // 
+            // txtPassaporteDependente
+            // 
+            this.txtPassaporteDependente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassaporteDependente.Location = new System.Drawing.Point(310, 61);
+            this.txtPassaporteDependente.Mask = ">&&&&&&&&";
+            this.txtPassaporteDependente.Name = "txtPassaporteDependente";
+            this.txtPassaporteDependente.Size = new System.Drawing.Size(123, 22);
+            this.txtPassaporteDependente.TabIndex = 4;
+            this.txtPassaporteDependente.Visible = false;
+            this.txtPassaporteDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
             // FormCadastro
             // 

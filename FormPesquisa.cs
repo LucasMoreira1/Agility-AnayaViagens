@@ -137,7 +137,7 @@ namespace ANAYA_VIAGENS
             {
                 DataGridView dgv = dataGridView1;
                 this.id = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
-                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
                 btnAtualizar.Text = "Atualizar (" + this.id + ")";
                 btnDeletar.Text = "Deletar (" + this.id + ")";
 

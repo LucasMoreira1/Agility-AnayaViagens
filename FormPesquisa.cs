@@ -113,21 +113,19 @@ namespace ANAYA_VIAGENS
             formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
             formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formcadastro.txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
             formcadastro.imgCamera.Image = Image.FromStream(ms);
-            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
         }
 
@@ -136,8 +134,8 @@ namespace ANAYA_VIAGENS
             if (e.RowIndex != -1)
             {
                 DataGridView dgv = dataGridView1;
-                this.id = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
-                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+                this.id = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
+                txtRegistroSelecionado.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
                 btnAtualizar.Text = "Atualizar (" + this.id + ")";
                 btnDeletar.Text = "Deletar (" + this.id + ")";
 
@@ -163,21 +161,19 @@ namespace ANAYA_VIAGENS
             formcadastro.txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
             formcadastro.txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
             formcadastro.txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            formcadastro.cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            formcadastro.txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+            formcadastro.cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            formcadastro.txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            formcadastro.txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            formcadastro.txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            formcadastro.txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            formcadastro.txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            formcadastro.txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            formcadastro.txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            formcadastro.txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
             formcadastro.imgCamera.Image = Image.FromStream(ms);
-            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+            formcadastro.txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            formcadastro.txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
         }
 

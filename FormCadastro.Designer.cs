@@ -36,8 +36,6 @@
             this.btnIniciarCamera = new FontAwesome.Sharp.IconButton();
             this.imgCamera = new System.Windows.Forms.PictureBox();
             this.txtOrgEmissor = new System.Windows.Forms.MaskedTextBox();
-            this.txtPassaporte = new System.Windows.Forms.MaskedTextBox();
-            this.txtRG = new System.Windows.Forms.MaskedTextBox();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtDataCasamento = new System.Windows.Forms.MaskedTextBox();
             this.txtDataNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -65,6 +63,8 @@
             this.txtEmbarqueOnde = new System.Windows.Forms.TextBox();
             this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassaporte = new System.Windows.Forms.MaskedTextBox();
+            this.txtRG = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscarCEP = new FontAwesome.Sharp.IconButton();
@@ -88,6 +88,7 @@
             this.btnLimpar = new FontAwesome.Sharp.IconButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cboxDocumentoDependente = new System.Windows.Forms.ComboBox();
             this.cboxGrauParentesco = new System.Windows.Forms.ComboBox();
             this.txtDataNascimentoDependente = new System.Windows.Forms.MaskedTextBox();
@@ -106,7 +107,6 @@
             this.txtCPFDependente = new System.Windows.Forms.MaskedTextBox();
             this.txtCertidaoNascimentoDependente = new System.Windows.Forms.TextBox();
             this.txtPassaporteDependente = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -256,29 +256,6 @@
             this.txtOrgEmissor.Visible = false;
             this.txtOrgEmissor.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
-            // txtPassaporte
-            // 
-            this.txtPassaporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassaporte.Location = new System.Drawing.Point(305, 92);
-            this.txtPassaporte.Mask = ">&&&&&&&&";
-            this.txtPassaporte.Name = "txtPassaporte";
-            this.txtPassaporte.Size = new System.Drawing.Size(123, 22);
-            this.txtPassaporte.TabIndex = 3;
-            this.txtPassaporte.Visible = false;
-            this.txtPassaporte.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            // 
-            // txtRG
-            // 
-            this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRG.Location = new System.Drawing.Point(305, 92);
-            this.txtRG.Mask = "CC,CCC,CCC-C";
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(123, 22);
-            this.txtRG.TabIndex = 4;
-            this.txtRG.Visible = false;
-            this.txtRG.Click += new System.EventHandler(this.txtDataNascimento_Click);
-            this.txtRG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarRG);
-            // 
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,7 +321,7 @@
             this.cboxPet.Items.AddRange(new object[] {
             "1-SIM",
             "2-NÃO"});
-            this.cboxPet.Location = new System.Drawing.Point(145, 355);
+            this.cboxPet.Location = new System.Drawing.Point(144, 324);
             this.cboxPet.Name = "cboxPet";
             this.cboxPet.Size = new System.Drawing.Size(150, 24);
             this.cboxPet.TabIndex = 14;
@@ -369,10 +346,11 @@
             "4-CACH. PTA",
             "5-TAUBATE",
             "9-OUTRO"});
-            this.cboxEmbarque.Location = new System.Drawing.Point(145, 321);
+            this.cboxEmbarque.Location = new System.Drawing.Point(145, 387);
             this.cboxEmbarque.Name = "cboxEmbarque";
             this.cboxEmbarque.Size = new System.Drawing.Size(150, 24);
             this.cboxEmbarque.TabIndex = 12;
+            this.cboxEmbarque.Visible = false;
             this.cboxEmbarque.SelectedIndexChanged += new System.EventHandler(this.cboxEmbarque_SelectedIndexChanged);
             // 
             // cboxEstadoCivil
@@ -435,7 +413,7 @@
             // 
             this.lblEmbarqueOnde.AutoSize = true;
             this.lblEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmbarqueOnde.Location = new System.Drawing.Point(301, 328);
+            this.lblEmbarqueOnde.Location = new System.Drawing.Point(301, 394);
             this.lblEmbarqueOnde.Name = "lblEmbarqueOnde";
             this.lblEmbarqueOnde.Size = new System.Drawing.Size(47, 16);
             this.lblEmbarqueOnde.TabIndex = 0;
@@ -446,7 +424,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 361);
+            this.label10.Location = new System.Drawing.Point(7, 330);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 16);
             this.label10.TabIndex = 0;
@@ -456,11 +434,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 328);
+            this.label4.Location = new System.Drawing.Point(6, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Embarque";
+            this.label4.Visible = false;
             // 
             // label9
             // 
@@ -555,7 +534,7 @@
             // txtEmbarqueOnde
             // 
             this.txtEmbarqueOnde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmbarqueOnde.Location = new System.Drawing.Point(364, 325);
+            this.txtEmbarqueOnde.Location = new System.Drawing.Point(364, 391);
             this.txtEmbarqueOnde.Name = "txtEmbarqueOnde";
             this.txtEmbarqueOnde.Size = new System.Drawing.Size(200, 22);
             this.txtEmbarqueOnde.TabIndex = 13;
@@ -578,6 +557,29 @@
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
             this.txtEmail.TabIndex = 9;
             // 
+            // txtPassaporte
+            // 
+            this.txtPassaporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassaporte.Location = new System.Drawing.Point(305, 92);
+            this.txtPassaporte.Mask = ">&&&&&&&&";
+            this.txtPassaporte.Name = "txtPassaporte";
+            this.txtPassaporte.Size = new System.Drawing.Size(123, 22);
+            this.txtPassaporte.TabIndex = 3;
+            this.txtPassaporte.Visible = false;
+            this.txtPassaporte.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            // 
+            // txtRG
+            // 
+            this.txtRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRG.Location = new System.Drawing.Point(305, 92);
+            this.txtRG.Mask = "CC,CCC,CCC-C";
+            this.txtRG.Name = "txtRG";
+            this.txtRG.Size = new System.Drawing.Size(123, 22);
+            this.txtRG.TabIndex = 4;
+            this.txtRG.Visible = false;
+            this.txtRG.Click += new System.EventHandler(this.txtDataNascimento_Click);
+            this.txtRG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisarRG);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtCEP);
@@ -595,7 +597,7 @@
             this.groupBox2.Controls.Add(this.txtBairro);
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.txtLogradouro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 678);
+            this.groupBox2.Location = new System.Drawing.Point(12, 461);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(999, 177);
             this.groupBox2.TabIndex = 2;
@@ -822,8 +824,8 @@
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.txtObservacao);
             this.groupBox4.Controls.Add(this.btnImagemEmBranco);
-            this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Controls.Add(this.btnAtualizar);
+            this.groupBox4.Controls.Add(this.btnSalvar);
             this.groupBox4.Location = new System.Drawing.Point(12, 861);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(999, 115);
@@ -852,12 +854,21 @@
             this.groupBox5.Controls.Add(this.txtCPFDependente);
             this.groupBox5.Controls.Add(this.txtCertidaoNascimentoDependente);
             this.groupBox5.Controls.Add(this.txtPassaporteDependente);
-            this.groupBox5.Location = new System.Drawing.Point(12, 461);
+            this.groupBox5.Location = new System.Drawing.Point(12, 644);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(999, 211);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dependentes";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(831, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(143, 125);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.Visible = false;
             // 
             // cboxDocumentoDependente
             // 
@@ -1068,15 +1079,6 @@
             this.txtPassaporteDependente.Visible = false;
             this.txtPassaporteDependente.Click += new System.EventHandler(this.txtDataNascimento_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(831, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(143, 125);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.Visible = false;
-            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1161,7 +1163,6 @@
         private System.Windows.Forms.Label label28;
         public System.Windows.Forms.MaskedTextBox txtRGDependente;
         public System.Windows.Forms.MaskedTextBox txtCPFDependente;
-        private System.Windows.Forms.ComboBox cboxDocumento;
         public System.Windows.Forms.MaskedTextBox txtRG;
         public System.Windows.Forms.MaskedTextBox txtCPF;
         public System.Windows.Forms.MaskedTextBox txtDataCasamento;
@@ -1189,5 +1190,6 @@
         public System.Windows.Forms.ComboBox cboxDocumentoDependente;
         public System.Windows.Forms.TextBox txtCertidaoNascimentoDependente;
         private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.ComboBox cboxDocumento;
     }
 }

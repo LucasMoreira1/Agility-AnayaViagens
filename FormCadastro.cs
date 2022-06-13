@@ -109,8 +109,6 @@ namespace ANAYA_VIAGENS
             CRUD.cmd.Parameters.AddWithValue("email", txtEmail.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("nacionalidade", txtNacionalidade.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("datacasamento", txtDataCasamento.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("embarque", cboxEmbarque.Text.Trim());
-            CRUD.cmd.Parameters.AddWithValue("embarqueonde", txtEmbarqueOnde.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("pet", cboxPet.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("cep", txtCEP.Text.Trim());
             CRUD.cmd.Parameters.AddWithValue("logradouro", txtLogradouro.Text.Trim());
@@ -153,10 +151,10 @@ namespace ANAYA_VIAGENS
 
 
             CRUD.sql = "INSERT INTO CLIENTES(nome,rg,orgemissor,cpf,passaporte,estadocivil,datanascimento," +
-                "telefone,email,nacionalidade,datacasamento,embarque,embarqueonde,pet,cep,logradouro,numero,complemento,bairro,cidade,estado," +
+                "telefone,email,nacionalidade,datacasamento,pet,cep,logradouro,numero,complemento,bairro,cidade,estado," +
                 "observacao,foto,datacadastro)" +
                 "Values(@nome,@rg,@orgemissor,@cpf,@passaporte,@estadocivil,@datanascimento," +
-                "@telefone,@email,@nacionalidade,@datacasamento,@embarque,@embarqueonde,@pet,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
+                "@telefone,@email,@nacionalidade,@datacasamento,@pet,@cep,@logradouro,@numero,@complemento,@bairro,@cidade,@estado," +
                 "@observacao,@foto,@data_cadastro);";
 
 
@@ -224,12 +222,13 @@ namespace ANAYA_VIAGENS
                 return;
             }
 
-            CRUD.sql = "UPDATE CLIENTES SET nome = @nome, rg = @rg, cpf = @cpf, " +
-                "datanascimento = @data_nascimento, estadocivil = @estado_civil," +
-                "telefone = @telefone, email = @email, cep = @cep, " +
-                "logradouro = @logradouro, numero = @numero, complemento = @complemento, bairro = @bairro," +
-                "cidade = @cidade, estado = @estado, " +
-                "observacao = @observacao, datacadastro = @data_cadastro, foto = @foto WHERE CadNumero = @cad_numero";
+
+            CRUD.sql = "UPDATE CLIENTES SET nome = @nome, rg = @rg, orgemissor = @orgemissor, cpf = @cpf, " +
+                "passaporte = @passaporte, estadocivil = @estadocivil, datanascimento = @datanascimento," +
+                "telefone = @telefone, email = @email,nacionalidade = @nacionalidade, datacasamento = @datacasamento," +
+                "pet = @pet, cep = @cep, logradouro = @logradouro, numero = @numero, " +
+                "complemento = @complemento, bairro = @bairro, cidade = @cidade, estado = @estado," +
+                "observacao = @observacao, foto = @foto, datacadastro = @data_cadastro WHERE CadNumero = @Cad_numero";
 
 
             Executar(CRUD.sql, "Update");
@@ -245,6 +244,7 @@ namespace ANAYA_VIAGENS
         private void FormCadastro_Load(object sender, EventArgs e)
         {
             txtDataCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            cboxDocumento.SelectedIndex = 0;
             
             //Camera
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -572,21 +572,19 @@ namespace ANAYA_VIAGENS
                 txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
                 txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
                 txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-                cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-                txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-                cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-                txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-                txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-                txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-                txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-                txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-                txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-                txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-                txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-                MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+                cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+                txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+                txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+                txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+                txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+                txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+                txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+                txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+                txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+                MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
                 imgCamera.Image = Image.FromStream(ms);
-                txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-                txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+                txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+                txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
                 dgv.Visible = false;
                 MessageBox.Show("Cliente localizado.");
@@ -641,23 +639,21 @@ namespace ANAYA_VIAGENS
             txtEmail.Text = Convert.ToString(dgv.CurrentRow.Cells[8].Value);
             txtNacionalidade.Text = Convert.ToString(dgv.CurrentRow.Cells[9].Value);
             txtDataCasamento.Text = Convert.ToString(dgv.CurrentRow.Cells[10].Value);
-            cboxEmbarque.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
-            txtEmbarqueOnde.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
-            cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
-            txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
-            txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
-            txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
-            txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
-            txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
-            txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
-            txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[20].Value);
-            txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
-            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[22].Value);
+            cboxPet.Text = Convert.ToString(dgv.CurrentRow.Cells[11].Value);
+            txtCEP.Text = Convert.ToString(dgv.CurrentRow.Cells[12].Value);
+            txtLogradouro.Text = Convert.ToString(dgv.CurrentRow.Cells[13].Value);
+            txtNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[14].Value);
+            txtComplemento.Text = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            txtBairro.Text = Convert.ToString(dgv.CurrentRow.Cells[16].Value);
+            txtCidade.Text = Convert.ToString(dgv.CurrentRow.Cells[17].Value);
+            txtEstado.Text = Convert.ToString(dgv.CurrentRow.Cells[18].Value);
+            txtObservacao.Text = Convert.ToString(dgv.CurrentRow.Cells[19].Value);
+            MemoryStream ms = new MemoryStream((byte[])dgv.CurrentRow.Cells[20].Value);
             imgCamera.Image = Image.FromStream(ms);
-            txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[23].Value);
-            txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[24].Value);
+            txtDataCadastro.Text = Convert.ToString(dgv.CurrentRow.Cells[21].Value);
+            txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
-            dgv.Visible = false;
+                dgv.Visible = false;
             MessageBox.Show("Cliente localizado.");
             }
 

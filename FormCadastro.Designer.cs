@@ -229,7 +229,7 @@
             this.btnIniciarCamera.Size = new System.Drawing.Size(91, 33);
             this.btnIniciarCamera.TabIndex = 0;
             this.btnIniciarCamera.TabStop = false;
-            this.btnIniciarCamera.Text = "Iniciar Camera";
+            this.btnIniciarCamera.Text = "Iniciar";
             this.btnIniciarCamera.UseVisualStyleBackColor = true;
             this.btnIniciarCamera.Click += new System.EventHandler(this.btnIniciarCamera_Click);
             // 
@@ -600,7 +600,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 461);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(999, 177);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
             // 
@@ -824,8 +824,8 @@
             this.groupBox4.Controls.Add(this.btnLimpar);
             this.groupBox4.Controls.Add(this.txtObservacao);
             this.groupBox4.Controls.Add(this.btnImagemEmBranco);
-            this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Controls.Add(this.btnSalvar);
+            this.groupBox4.Controls.Add(this.btnAtualizar);
             this.groupBox4.Location = new System.Drawing.Point(12, 861);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(999, 115);
@@ -857,7 +857,7 @@
             this.groupBox5.Location = new System.Drawing.Point(12, 644);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(999, 211);
-            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dependentes";
             // 

@@ -42,7 +42,7 @@ namespace ANAYA_VIAGENS
             txtNome.Text = "";
             txtRG.Text = "";
             txtOrgEmissor.Text = "";
-            txtCPF.Text = "";
+            //txtCPF.Text = "";
             txtPassaporte.Text = "";
             txtDataNascimento.Text = "";            
             txtTelefone.Text = "";
@@ -69,7 +69,7 @@ namespace ANAYA_VIAGENS
             txtCPFDependente.Text = "";
             txtPassaporteDependente.Text = "";
             txtCertidaoNascimentoDependente.Text = "";
-            
+
         }
 
         private void Executar(string mySQL, string param)
@@ -182,8 +182,12 @@ namespace ANAYA_VIAGENS
             MessageBox.Show("Sócio registrado. Registro número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            
+
+
             //loadData("");
-            ResetMe();
+            //ResetMe();
+            pesquisaCPF();
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)
@@ -356,6 +360,8 @@ namespace ANAYA_VIAGENS
 
         private void btnAdcDependente_Click(object sender, EventArgs e)
         {
+            btnSalvar.PerformClick();
+
             if (string.IsNullOrEmpty(txtNome.Text.Trim()) || 
                     (string.IsNullOrEmpty(txtCadNumero.Text.Trim())))
             {
@@ -654,7 +660,7 @@ namespace ANAYA_VIAGENS
             txtCadNumero.Text = Convert.ToString(dgv.CurrentRow.Cells[22].Value);
 
                 dgv.Visible = false;
-            MessageBox.Show("Cliente localizado.");
+            //MessageBox.Show("Cliente localizado.");
             }
 
 

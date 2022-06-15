@@ -239,7 +239,7 @@ namespace ANAYA_VIAGENS
                 formCadastro.btnAtualizar.Visible = true;
                 txtConsultaCPF.Text = "";
                 dgv.Visible = false;
-                MessageBox.Show("Cliente localizado.");
+                //MessageBox.Show("Cliente localizado.");
             }
         }
 

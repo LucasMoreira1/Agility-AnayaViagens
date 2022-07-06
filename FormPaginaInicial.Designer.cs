@@ -52,11 +52,11 @@ namespace ANAYA_VIAGENS
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelFormTitulo = new System.Windows.Forms.Panel();
             this.panelFormCentral = new System.Windows.Forms.Panel();
+            this.txtConsultaCPF = new System.Windows.Forms.MaskedTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPesquisarCPF = new System.Windows.Forms.Button();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtConsultaCPF = new System.Windows.Forms.MaskedTextBox();
             this.panelEsquerdo.SuspendLayout();
             this.panelDocumentos.SuspendLayout();
             this.panelPesquisas.SuspendLayout();
@@ -64,8 +64,8 @@ namespace ANAYA_VIAGENS
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFormCentral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEsquerdo
@@ -499,6 +499,27 @@ namespace ANAYA_VIAGENS
             this.panelFormCentral.Size = new System.Drawing.Size(949, 651);
             this.panelFormCentral.TabIndex = 2;
             // 
+            // txtConsultaCPF
+            // 
+            this.txtConsultaCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsultaCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsultaCPF.Location = new System.Drawing.Point(724, 10);
+            this.txtConsultaCPF.Mask = "000,000,000-00";
+            this.txtConsultaCPF.Name = "txtConsultaCPF";
+            this.txtConsultaCPF.Size = new System.Drawing.Size(123, 22);
+            this.txtConsultaCPF.TabIndex = 5;
+            this.txtConsultaCPF.Click += new System.EventHandler(this.txtConsultaCPF_Click);
+            this.txtConsultaCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisaCPF);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(140, 33);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.Visible = false;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -538,27 +559,6 @@ namespace ANAYA_VIAGENS
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(140, 33);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.Visible = false;
-            // 
-            // txtConsultaCPF
-            // 
-            this.txtConsultaCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsultaCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsultaCPF.Location = new System.Drawing.Point(724, 10);
-            this.txtConsultaCPF.Mask = "000,000,000-00";
-            this.txtConsultaCPF.Name = "txtConsultaCPF";
-            this.txtConsultaCPF.Size = new System.Drawing.Size(123, 22);
-            this.txtConsultaCPF.TabIndex = 5;
-            this.txtConsultaCPF.Click += new System.EventHandler(this.txtConsultaCPF_Click);
-            this.txtConsultaCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PesquisaCPF);
-            // 
             // formPaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,8 +585,8 @@ namespace ANAYA_VIAGENS
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFormCentral.ResumeLayout(false);
             this.panelFormCentral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,31 +595,31 @@ namespace ANAYA_VIAGENS
 
         #endregion
         private System.Windows.Forms.Panel panelEsquerdo;
-        private FontAwesome.Sharp.IconButton btnAjuda;
         private System.Windows.Forms.Panel panelDocumentos;
         private FontAwesome.Sharp.IconButton btnCheques;
         private FontAwesome.Sharp.IconButton btnCarteirinha;
-        private FontAwesome.Sharp.IconButton btnDocumentos;
-        private FontAwesome.Sharp.IconButton btnRelatorios;
         private System.Windows.Forms.Panel panelPesquisas;
         private FontAwesome.Sharp.IconButton btnPesquisarEmpresa;
         private FontAwesome.Sharp.IconButton btnPesquisarCliente;
-        private FontAwesome.Sharp.IconButton btnPesquisar;
         private System.Windows.Forms.Panel panelCadastros;
         private FontAwesome.Sharp.IconButton btnCriarPacotes;
         private FontAwesome.Sharp.IconButton btnCadastroCliente;
-        private FontAwesome.Sharp.IconButton btnCadastros;
         private System.Windows.Forms.Panel panelFormTitulo;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel panelFormCentral;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private FontAwesome.Sharp.IconButton btnPaginaInicial;
-        private FontAwesome.Sharp.IconButton btnTelaVendas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPesquisarCPF;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MaskedTextBox txtConsultaCPF;
+        public FontAwesome.Sharp.IconButton btnPaginaInicial;
+        public FontAwesome.Sharp.IconButton btnAjuda;
+        public FontAwesome.Sharp.IconButton btnDocumentos;
+        public FontAwesome.Sharp.IconButton btnRelatorios;
+        public FontAwesome.Sharp.IconButton btnPesquisar;
+        public FontAwesome.Sharp.IconButton btnCadastros;
+        public FontAwesome.Sharp.IconButton btnTelaVendas;
     }
 }
 

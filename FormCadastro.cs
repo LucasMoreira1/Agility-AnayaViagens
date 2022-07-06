@@ -182,12 +182,12 @@ namespace ANAYA_VIAGENS
             MessageBox.Show("Sócio registrado. Registro número: " + NumeroRegistro + ".", "Cadastro",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            
-
-
+           
             //loadData("");
             //ResetMe();
             pesquisaCPF();
+            //formPaginaInicial formPaginaInicial = new formPaginaInicial();
+            //formPaginaInicial.btnPaginaInicial.PerformClick();
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)

@@ -35,7 +35,7 @@ namespace ANAYA_VIAGENS
         public void loadFiltro()
         {
             CRUD.sql = "SELECT * FROM CLIENTES WHERE " + cboxFiltro2.Text.Trim() + " LIKE '%" + txtFiltro2.Text.Trim() + "%' AND " +
-              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%';";
+              "" + cboxFiltro3.Text.Trim() + " LIKE '%" + txtFiltro3.Text.Trim() + "%' ORDER BY Nome;";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
@@ -64,7 +64,7 @@ namespace ANAYA_VIAGENS
         private void loadData(string keyword)
         {
 
-            CRUD.sql = "SELECT * FROM CLIENTES;";
+            CRUD.sql = "SELECT * FROM CLIENTES ORDER BY Nome;";
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
 
 
@@ -220,7 +220,7 @@ namespace ANAYA_VIAGENS
 
         private void txtFiltro1_KeyDown(object sender, KeyEventArgs e)
         {
-            CRUD.sql = "SELECT * FROM CLIENTES WHERE CadNumero = '" + txtFiltro1.Text.Trim() + "';";
+            CRUD.sql = "SELECT * FROM CLIENTES WHERE CadNumero = '" + txtFiltro1.Text.Trim() + "' ORDER BY Nome;";
 
             CRUD.cmd = new MySqlCommand(CRUD.sql, CRUD.con);
             DataTable dt = CRUD.PerformCRUD(CRUD.cmd);

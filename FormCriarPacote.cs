@@ -2,11 +2,13 @@
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System;
+using System.IO;
 
 namespace ANAYA_VIAGENS
 {
     public partial class FormCriarPacote : Form
     {
+        public string localizacaoFoto;
         public FormCriarPacote()
         {
             InitializeComponent();
@@ -32,9 +34,25 @@ namespace ANAYA_VIAGENS
         {
             CRUD.cmd.Parameters.Clear();
 
+            MemoryStream ms = new MemoryStream();
+            if (imgPacote.Image == null)
+            {
+                imgPacote.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            else
+            {
+                imgPacote.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+
+
+            byte[] img = ms.GetBuffer();
+
+
+
             CRUD.cmd.Parameters.AddWithValue("Destino", txtDestino.Text);
             CRUD.cmd.Parameters.AddWithValue("Data", txtDataViagem.Text);
             CRUD.cmd.Parameters.AddWithValue("Roteiro", txtRoteiro.Text);
+            CRUD.cmd.Parameters.AddWithValue("Foto", img);
 
         }
 
@@ -46,13 +64,24 @@ namespace ANAYA_VIAGENS
                 return;
             }
 
-            CRUD.sql = "INSERT INTO PACOTES (Destino, Data, Roteiro) Values (@Destino, @Data, @Roteiro)";
+            CRUD.sql = "INSERT INTO PACOTES (Destino, Data, Roteiro, Foto) Values (@Destino, @Data, @Roteiro, @Foto)";
 
             Executar(CRUD.sql, "Insert");
 
             MessageBox.Show("Pacote registrado.", "Cadastro realizado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             LimparDados();
+        }
+
+        private void btnImportarImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Escolha a foto(*.jpeg;*.jpg;*.png;*.gif) |*.jpeg;*.jpg;*.png;*.gif";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                localizacaoFoto = ofd.FileName.ToString();
+                imgPacote.ImageLocation = localizacaoFoto;
+            }
         }
     }
 }

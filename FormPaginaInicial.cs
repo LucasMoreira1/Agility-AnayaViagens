@@ -252,5 +252,10 @@ namespace ANAYA_VIAGENS
         {
             txtConsultaCPF.SelectionStart = 0;
         }
+
+        private void btnTelaVendas_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTelaVenda());
+        }
     }
 }

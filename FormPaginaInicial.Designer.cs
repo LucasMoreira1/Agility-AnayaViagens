@@ -426,6 +426,7 @@ namespace ANAYA_VIAGENS
             this.btnTelaVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTelaVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTelaVendas.UseVisualStyleBackColor = false;
+            this.btnTelaVendas.Click += new System.EventHandler(this.btnTelaVendas_Click);
             // 
             // btnPaginaInicial
             // 

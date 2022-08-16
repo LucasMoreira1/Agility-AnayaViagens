@@ -55,7 +55,9 @@ namespace ANAYA_VIAGENS
 
         private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCadastro());
+            FormCadastro formCadastro = new FormCadastro();
+            formCadastro.Show();
+            //OpenChildForm(new FormCadastro());
             //..
             //Codigos
             //..
@@ -64,7 +66,9 @@ namespace ANAYA_VIAGENS
 
         private void btnCriarPacotes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCriarPacote());
+            FormCriarPacote formCriarPacote = new FormCriarPacote();
+            formCriarPacote.Show();
+            //OpenChildForm(new FormCriarPacote());
             //..
             //Codigos
             //..
@@ -79,7 +83,9 @@ namespace ANAYA_VIAGENS
 
         private void btnPesquisarCliente_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormPesquisa());
+            FormPesquisa formPesquisa = new FormPesquisa();
+            formPesquisa.Show();
+            //OpenChildForm(new FormPesquisa());
             //..
             //Codigos
             //..
@@ -202,14 +208,14 @@ namespace ANAYA_VIAGENS
                 formCadastro.Show();
                 formCadastro.btnSalvar.Visible = true;
                 formCadastro.btnAtualizar.Visible = false;
-                formCadastro.cboxDocumento.SelectedIndex = 0;
+                //formCadastro.cboxDocumento.SelectedIndex = 0;
                 formCadastro.txtCPF.Text = txtConsultaCPF.Text;
                 txtConsultaCPF.Text = "";
             }
             else
             {
                 formCadastro.Show();
-                formCadastro.cboxDocumento.SelectedIndex = 0;
+                //formCadastro.cboxDocumento.SelectedIndex = 0;
                 formCadastro.txtNome.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
                 formCadastro.txtRG.Text = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
                 formCadastro.txtOrgEmissor.Text = Convert.ToString(dgv.CurrentRow.Cells[2].Value);

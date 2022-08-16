@@ -28,13 +28,13 @@ namespace ANAYA_VIAGENS
         private void ResetMe()
         {
             //Zerar comboBox identificação cliente
-            cboxDocumento.SelectedIndex = -1;
+            //cboxDocumento.SelectedIndex = -1;
             cboxEstadoCivil.SelectedIndex = -1;
             cboxEmbarque.SelectedIndex = -1;
             cboxPet.SelectedIndex = -1;
 
             //Zerar comboBox identificação dependentes
-            cboxDocumentoDependente.SelectedIndex = -1;
+            //cboxDocumentoDependente.SelectedIndex = -1;
             cboxGrauParentesco.SelectedIndex = -1;
             cboxAutorizacaoDependente.SelectedIndex = -1;
 
@@ -248,7 +248,7 @@ namespace ANAYA_VIAGENS
         private void FormCadastro_Load(object sender, EventArgs e)
         {
             txtDataCadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            cboxDocumento.SelectedIndex = 0;
+            //cboxDocumento.SelectedIndex = 0;
             
             //Camera
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -414,31 +414,31 @@ namespace ANAYA_VIAGENS
 
         }
 
-        private void cboxDocumento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboxDocumento.Text == "CPF")
-            {
-                txtCPF.Visible = true;
-                txtRG.Visible = false;
-                txtPassaporte.Visible = false;
-                txtOrgEmissor.Visible = false;
-            }
-            else if (cboxDocumento.Text == "RG")
-            {
-                txtCPF.Visible = false;
-                txtRG.Visible = true;
-                txtPassaporte.Visible = false;
-                txtOrgEmissor.Visible = true;
-            }
-            else if (cboxDocumento.Text == "PASSAPORTE")
-            {
-                txtCPF.Visible = false;
-                txtRG.Visible = false;
-                txtPassaporte.Visible = true;
-                txtOrgEmissor.Visible = false;
-            }
+        //private void cboxDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cboxDocumento.Text == "CPF")
+        //    {
+        //        txtCPF.Visible = true;
+        //        txtRG.Visible = false;
+        //        txtPassaporte.Visible = false;
+        //        txtOrgEmissor.Visible = false;
+        //    }
+        //    else if (cboxDocumento.Text == "RG")
+        //    {
+        //        txtCPF.Visible = false;
+        //        txtRG.Visible = true;
+        //        txtPassaporte.Visible = false;
+        //        txtOrgEmissor.Visible = true;
+        //    }
+        //    else if (cboxDocumento.Text == "PASSAPORTE")
+        //    {
+        //        txtCPF.Visible = false;
+        //        txtRG.Visible = false;
+        //        txtPassaporte.Visible = true;
+        //        txtOrgEmissor.Visible = false;
+        //    }
 
-        }
+        //}
 
         private void txtDataNascimento_Click(object sender, EventArgs e)
         {
@@ -489,41 +489,41 @@ namespace ANAYA_VIAGENS
                 btnBuscarCEP_Click(sender, e);
         }
 
-        private void cboxDocumentoDependente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboxDocumentoDependente.Text == "CPF")
-            {
-                txtCPFDependente.Visible = true;
-                txtRGDependente.Visible = false;
-                txtPassaporteDependente.Visible = false;
-                txtOrgEmissorDependente.Visible = false;
-                txtCertidaoNascimentoDependente.Visible = false;
-            }
-            else if (cboxDocumentoDependente.Text == "RG")
-            {
-                txtCPFDependente.Visible = false;
-                txtRGDependente.Visible = true;
-                txtPassaporteDependente.Visible = false;
-                txtOrgEmissorDependente.Visible = true;
-                txtCertidaoNascimentoDependente.Visible = false;
-            }
-            else if (cboxDocumentoDependente.Text == "PASSAPORTE")
-            {
-                txtCPFDependente.Visible = false;
-                txtRGDependente.Visible = false;
-                txtPassaporteDependente.Visible = true;
-                txtOrgEmissorDependente.Visible = false;
-                txtCertidaoNascimentoDependente.Visible = false;
-            }
-            else if(cboxDocumentoDependente.Text== "CERT. NASC.")
-            {
-                txtCPFDependente.Visible = false;
-                txtRGDependente.Visible = false;
-                txtPassaporteDependente.Visible = false;
-                txtOrgEmissorDependente.Visible = false;
-                txtCertidaoNascimentoDependente.Visible = true;
-            }
-        }
+        //private void cboxDocumentoDependente_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cboxDocumentoDependente.Text == "CPF")
+        //    {
+        //        txtCPFDependente.Visible = true;
+        //        txtRGDependente.Visible = false;
+        //        txtPassaporteDependente.Visible = false;
+        //        txtOrgEmissorDependente.Visible = false;
+        //        txtCertidaoNascimentoDependente.Visible = false;
+        //    }
+        //    else if (cboxDocumentoDependente.Text == "RG")
+        //    {
+        //        txtCPFDependente.Visible = false;
+        //        txtRGDependente.Visible = true;
+        //        txtPassaporteDependente.Visible = false;
+        //        txtOrgEmissorDependente.Visible = true;
+        //        txtCertidaoNascimentoDependente.Visible = false;
+        //    }
+        //    else if (cboxDocumentoDependente.Text == "PASSAPORTE")
+        //    {
+        //        txtCPFDependente.Visible = false;
+        //        txtRGDependente.Visible = false;
+        //        txtPassaporteDependente.Visible = true;
+        //        txtOrgEmissorDependente.Visible = false;
+        //        txtCertidaoNascimentoDependente.Visible = false;
+        //    }
+        //    else if(cboxDocumentoDependente.Text== "CERT. NASC.")
+        //    {
+        //        txtCPFDependente.Visible = false;
+        //        txtRGDependente.Visible = false;
+        //        txtPassaporteDependente.Visible = false;
+        //        txtOrgEmissorDependente.Visible = false;
+        //        txtCertidaoNascimentoDependente.Visible = true;
+        //    }
+        //}
 
         private void btnAtualizarDependente_Click(object sender, EventArgs e)
         {

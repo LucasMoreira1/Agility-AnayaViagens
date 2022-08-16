@@ -35,7 +35,6 @@ namespace ANAYA_VIAGENS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPesquisar = new FontAwesome.Sharp.IconButton();
             this.btnMostrarTodos = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.cboxFiltro2 = new System.Windows.Forms.ComboBox();
             this.txtFiltro2 = new System.Windows.Forms.TextBox();
             this.lblFiltro2 = new System.Windows.Forms.Label();
@@ -101,24 +100,6 @@ namespace ANAYA_VIAGENS
             this.btnMostrarTodos.UseMnemonic = false;
             this.btnMostrarTodos.UseVisualStyleBackColor = false;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackColor = System.Drawing.Color.White;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Reply;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(57)))), ((int)(((byte)(88)))));
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 35;
-            this.iconButton3.Location = new System.Drawing.Point(12, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(37, 32);
-            this.iconButton3.TabIndex = 2;
-            this.iconButton3.UseVisualStyleBackColor = false;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // cboxFiltro2
             // 
@@ -388,13 +369,12 @@ namespace ANAYA_VIAGENS
             this.Controls.Add(this.txtFiltro1);
             this.Controls.Add(this.txtFiltro2);
             this.Controls.Add(this.cboxFiltro2);
-            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnPesquisar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPesquisa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa";
             this.Load += new System.EventHandler(this.FormPesquisa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -411,7 +391,6 @@ namespace ANAYA_VIAGENS
 
         #endregion
         private FontAwesome.Sharp.IconButton btnMostrarTodos;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.ComboBox cboxFiltro2;
         private System.Windows.Forms.Label lblFiltro2;
         private System.Windows.Forms.ComboBox cboxFiltro3;

@@ -60,5 +60,11 @@ namespace ANAYA_VIAGENS
 
 
         }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                iconButton1_Click(sender, e);
+        }
     }
 }
